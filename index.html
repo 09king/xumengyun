@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>元旦快乐 | 新年祝福</title>
+    <title>徐梦云专属元旦祝福 | 2026新年快乐</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         * {
@@ -33,110 +33,220 @@
             z-index: 10;
         }
 
+        /* 徐梦云专属横幅 */
+        .mengyun-banner {
+            background: linear-gradient(90deg, #ff6b93, #ff8fab, #c1e1ff, #5a8cd0);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-size: 2.8rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-align: center;
+            padding: 10px 30px;
+            border-radius: 20px;
+            position: relative;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+        }
+
+        .mengyun-banner:before, .mengyun-banner:after {
+            content: "✦";
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #ff6b93;
+            font-size: 1.8rem;
+        }
+
+        .mengyun-banner:before {
+            left: 0;
+        }
+
+        .mengyun-banner:after {
+            right: 0;
+        }
+
         header {
             text-align: center;
-            padding: 30px 20px;
+            padding: 20px;
             width: 100%;
         }
 
         .main-title {
-            font-size: 3.5rem;
-            margin-bottom: 15px;
-            background: linear-gradient(90deg, #ffd700, #ff8c00);
+            font-size: 3.8rem;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, #ffd700, #ff8c00, #ff6b93);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            text-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+            letter-spacing: 2px;
         }
 
         .year {
-            font-size: 2.5rem;
-            margin-bottom: 30px;
+            font-size: 2.8rem;
+            margin-bottom: 20px;
             color: #ff7e5f;
             font-weight: bold;
+            position: relative;
+            display: inline-block;
+        }
+
+        .year:after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, #ff6b93, #ffd700);
+            border-radius: 2px;
         }
 
         .content {
             width: 100%;
-            max-width: 800px;
+            max-width: 900px;
             background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(8px);
-            border-radius: 20px;
-            padding: 40px;
+            backdrop-filter: blur(12px);
+            border-radius: 25px;
+            padding: 50px;
             margin: 30px 0;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .content:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #ff6b93, #ffd700, #5a8cd0);
         }
 
         .wishes-title {
-            font-size: 2rem;
-            margin-bottom: 25px;
+            font-size: 2.2rem;
+            margin-bottom: 30px;
             color: #ffd700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .wishes-title i {
+            color: #ff6b93;
         }
 
         .wishes-text {
-            font-size: 1.3rem;
-            line-height: 1.8;
-            margin-bottom: 30px;
-            min-height: 100px;
+            font-size: 1.4rem;
+            line-height: 1.9;
+            margin-bottom: 40px;
+            min-height: 120px;
+            padding: 20px;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-left: 4px solid #ff6b93;
         }
 
         .wishes-text p {
             margin-bottom: 20px;
         }
 
+        .personalized-wish {
+            color: #ffd700;
+            font-weight: bold;
+            font-size: 1.5rem;
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            background: rgba(255, 107, 147, 0.1);
+            border: 1px dashed #ff6b93;
+        }
+
         .new-wish-btn {
-            background: linear-gradient(90deg, #ff7e5f, #feb47b);
+            background: linear-gradient(90deg, #ff6b93, #ff8fab);
             border: none;
             color: white;
-            padding: 15px 40px;
-            font-size: 1.1rem;
+            padding: 18px 45px;
+            font-size: 1.2rem;
             border-radius: 50px;
             cursor: pointer;
             transition: all 0.3s;
             margin-top: 20px;
-            box-shadow: 0 5px 15px rgba(255, 126, 95, 0.4);
+            box-shadow: 0 8px 20px rgba(255, 107, 147, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            font-weight: bold;
         }
 
         .new-wish-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(255, 126, 95, 0.6);
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 12px 25px rgba(255, 107, 147, 0.7);
         }
 
         .fireworks-control {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 20px;
-            margin-top: 30px;
+            gap: 25px;
+            margin-top: 40px;
+            flex-wrap: wrap;
         }
 
         .control-btn {
             background: rgba(255, 255, 255, 0.1);
             border: 1px solid rgba(255, 255, 255, 0.2);
             color: white;
-            padding: 12px 25px;
-            font-size: 1rem;
+            padding: 15px 30px;
+            font-size: 1.1rem;
             border-radius: 50px;
             cursor: pointer;
             transition: all 0.3s;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
         }
 
         .control-btn:hover {
             background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .special-btn {
+            background: linear-gradient(90deg, #5a8cd0, #c1e1ff);
+            border: none;
         }
 
         .footer {
-            margin-top: 40px;
+            margin-top: 50px;
             text-align: center;
-            padding: 20px;
-            font-size: 1rem;
-            opacity: 0.7;
+            padding: 25px;
+            font-size: 1.1rem;
+            opacity: 0.8;
             width: 100%;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer p {
+            margin-bottom: 10px;
+        }
+
+        .heart {
+            color: #ff6b93;
+            animation: heartbeat 1.5s infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
         }
 
         /* 烟花画布 */
@@ -150,14 +260,51 @@
             z-index: 1;
         }
 
+        /* 徐梦云专属徽章 */
+        .mengyun-badge {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(255, 107, 147, 0.2);
+            border: 2px solid #ff6b93;
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+            z-index: 20;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .mengyun-badge:hover {
+            transform: scale(1.1) rotate(10deg);
+            background: rgba(255, 107, 147, 0.3);
+        }
+
+        .mengyun-badge:after {
+            content: "云";
+            position: absolute;
+            font-size: 2rem;
+            color: #ffd700;
+        }
+
         /* 响应式设计 */
         @media (max-width: 768px) {
-            .main-title { font-size: 2.5rem; }
-            .year { font-size: 2rem; }
+            .mengyun-banner { font-size: 2rem; }
+            .main-title { font-size: 2.8rem; }
+            .year { font-size: 2.2rem; }
             .content { padding: 30px 20px; }
-            .wishes-title { font-size: 1.7rem; }
-            .wishes-text { font-size: 1.1rem; }
-            .fireworks-control { flex-direction: column; gap: 10px; }
+            .wishes-title { font-size: 1.8rem; }
+            .wishes-text { font-size: 1.2rem; }
+            .fireworks-control { flex-direction: column; gap: 15px; }
+            .control-btn { width: 100%; justify-content: center; }
+            .mengyun-badge { width: 60px; height: 60px; bottom: 10px; right: 10px; }
         }
     </style>
 </head>
@@ -165,16 +312,25 @@
     <!-- 烟花画布 -->
     <canvas id="fireworks-canvas"></canvas>
     
+    <!-- 徐梦云专属徽章 -->
+    <div class="mengyun-badge" id="mengyun-badge" title="点击查看专属惊喜"></div>
+    
     <div class="container">
+        <!-- 徐梦云专属横幅 -->
+        <div class="mengyun-banner">✦ 徐梦云专属元旦祝福 ✦</div>
+        
         <header>
-            <h1 class="main-title">元旦快乐</h1>
-            <div class="year">2025</div>
+            <h1 class="main-title">元旦快乐 2026</h1>
+            <div class="year">2026</div>
         </header>
         
         <div class="content">
-            <h2 class="wishes-title">新年祝福</h2>
+            <h2 class="wishes-title">
+                <i class="fas fa-star"></i> 新年祝福 <i class="fas fa-star"></i>
+            </h2>
             <div class="wishes-text">
-                <p id="wish-text">元旦到来，愿你在新的一年里，所有的希望都能如愿，所有的梦想都能实现，所有的等候都能出现，所有的付出都能兑现！</p>
+                <p id="wish-text">亲爱的梦云，元旦到来，愿你在2026年里，所有的希望都能如愿，所有的梦想都能实现，所有的等候都能出现，所有的付出都能兑现！</p>
+                <div class="personalized-wish" id="personalized-wish">愿你的2026年如星辰般璀璨，如烟火般绚烂！</div>
             </div>
             
             <button class="new-wish-btn" id="new-wish-btn">
@@ -186,45 +342,70 @@
             <button class="control-btn" id="more-fireworks">
                 <i class="fas fa-fire"></i> 更多烟花
             </button>
+            <button class="control-btn" id="mengyun-fireworks">
+                <i class="fas fa-heart"></i> 梦云专属烟花
+            </button>
             <button class="control-btn" id="pause-fireworks">
                 <i class="fas fa-pause"></i> 暂停烟花
+            </button>
+            <button class="control-btn special-btn" id="special-effect">
+                <i class="fas fa-magic"></i> 特效祝福
             </button>
         </div>
         
         <div class="footer">
-            <p>祝福您和家人元旦快乐，新年新气象！</p>
-            <p>Made with ❤️ for Gitee</p>
+            <p>祝福徐梦云和家人在2026年元旦快乐，新年新气象，万事皆如意！</p>
+            <p>Made with <span class="heart">❤️</span> for 徐梦云 | 2026年元旦特别版</p>
         </div>
     </div>
 
     <script>
-        // 祝福语数组
-        const wishes = [
-            "元旦快乐！愿新的一年带给你无限的欢乐、幸福与成功。",
-            "新年新气象，愿你的生活如同烟花般绚烂多彩，精彩不断！",
-            "祝福你在新的一年里，心想事成，万事如意，阖家幸福安康！",
-            "元旦到，福气到！愿你在新的一年里，事业顺利，身体健康，笑口常开！",
-            "愿新年的阳光照亮你的前程，带给你温暖、希望和无限的机遇！",
-            "元旦佳节，祝你丢掉烦恼，拥抱快乐，新的一年一切顺利！",
-            "愿新年的钟声为你带来平安喜乐，愿你的每一天都充满阳光和欢笑！",
-            "元旦之际，送上我最真挚的祝福：愿你生活美满，工作顺心，梦想成真！",
-            "新的一年，新的开始，愿你乘风破浪，勇往直前，创造属于自己的辉煌！",
-            "元旦快乐！愿这特别的一天为你带来一整年的好运和无限的快乐！"
+        // 徐梦云专属祝福语数组
+        const mengyunWishes = [
+            "亲爱的梦云，2026年元旦快乐！愿新的一年带给你无限的欢乐、幸福与成功。",
+            "梦云，新年新气象！愿你的2026年如烟花般绚烂多彩，精彩不断，梦想成真！",
+            "祝福梦云在新的一年里，心想事成，万事如意，阖家幸福安康，每天都充满阳光！",
+            "元旦到，福气到！愿梦云在2026年里，事业顺利，身体健康，笑口常开，越来越美丽！",
+            "愿2026年的阳光照亮梦云的前程，带给你温暖、希望和无限的机遇，一切顺利！",
+            "元旦佳节，祝梦云丢掉烦恼，拥抱快乐，新的一年一切顺利，每天都开心幸福！",
+            "愿新年的钟声为梦云带来平安喜乐，愿你的每一天都充满阳光、欢笑和爱！",
+            "元旦之际，送上最真挚的祝福：愿梦云生活美满，工作顺心，梦想成真，永远年轻！",
+            "新的一年，新的开始，愿梦云乘风破浪，勇往直前，创造属于自己的辉煌2026！",
+            "梦云，元旦快乐！愿这特别的一天为你带来一整年的好运、财富和无限的快乐！",
+            "2026年，愿梦云所有的努力都有回报，所有的期待都能实现，所有的日子都闪闪发光！",
+            "祝福梦云在新的一年里，爱情甜蜜，友情长存，亲情温暖，人生圆满幸福！",
+            "愿2026年为梦云开启新的篇章，带来新的机遇，实现新的梦想，收获新的成功！",
+            "元旦来临，愿梦云的生活如诗如画，事业如日中天，心情如沐春风，永远美丽动人！",
+            "2026年，愿梦云每一天都充满正能量，每一步都走向成功，每一刻都感受到幸福！"
         ];
 
-        // 烟花颜色数组
+        // 个性化专属祝福
+        const personalizedWishes = [
+            "愿你的2026年如星辰般璀璨，如烟火般绚烂！",
+            "梦云的2026，注定是不平凡的一年！",
+            "新的一年，愿梦云被世界温柔以待！",
+            "2026，梦云要更加闪耀夺目！",
+            "愿所有美好，都在2026年与梦云不期而遇！"
+        ];
+
+        // 烟花颜色数组 - 添加更多梦幻色彩
         const fireworkColors = [
             "#FF5252", "#FF4081", "#E040FB", "#7C4DFF", 
             "#536DFE", "#448AFF", "#40C4FF", "#18FFFF",
             "#64FFDA", "#69F0AE", "#B2FF59", "#EEFF41",
-            "#FFFF00", "#FFD740", "#FFAB40", "#FF6E40"
+            "#FFFF00", "#FFD740", "#FFAB40", "#FF6E40",
+            "#FF6B93", "#FF8FAB", "#C1E1FF", "#5A8CD0"  // 徐梦云专属色系
         ];
 
         // 获取DOM元素
         const wishTextElement = document.getElementById('wish-text');
+        const personalizedWishElement = document.getElementById('personalized-wish');
         const newWishBtn = document.getElementById('new-wish-btn');
         const moreFireworksBtn = document.getElementById('more-fireworks');
+        const mengyunFireworksBtn = document.getElementById('mengyun-fireworks');
         const pauseFireworksBtn = document.getElementById('pause-fireworks');
+        const specialEffectBtn = document.getElementById('special-effect');
+        const mengyunBadge = document.getElementById('mengyun-badge');
         
         // 画布和上下文
         const canvas = document.getElementById('fireworks-canvas');
@@ -246,12 +427,13 @@
                 this.x = x;
                 this.y = y;
                 this.color = color;
-                this.radius = Math.random() * 3 + 1;
-                this.speedX = Math.random() * 6 - 3;
-                this.speedY = Math.random() * 6 - 3;
-                this.life = 30;
+                this.radius = Math.random() * 4 + 1;
+                this.speedX = Math.random() * 8 - 4;
+                this.speedY = Math.random() * 8 - 4;
+                this.life = 40;
                 this.gravity = 0.05;
                 this.decay = Math.random() * 0.02 + 0.01;
+                this.alpha = 1;
             }
             
             update() {
@@ -259,14 +441,15 @@
                 this.x += this.speedX;
                 this.y += this.speedY;
                 this.life -= this.decay;
-                this.radius -= 0.05;
+                this.radius -= 0.06;
+                this.alpha = this.life / 40;
             }
             
             draw() {
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
                 ctx.fillStyle = this.color;
-                ctx.globalAlpha = this.life / 30;
+                ctx.globalAlpha = this.alpha;
                 ctx.fill();
                 ctx.globalAlpha = 1;
             }
@@ -278,17 +461,20 @@
         
         // 烟花发射类
         class Firework {
-            constructor(x, y, targetX, targetY) {
+            constructor(x, y, targetX, targetY, isSpecial = false) {
                 this.x = x;
                 this.y = y;
                 this.targetX = targetX;
                 this.targetY = targetY;
-                this.color = fireworkColors[Math.floor(Math.random() * fireworkColors.length)];
+                this.color = isSpecial ? "#FF6B93" : fireworkColors[Math.floor(Math.random() * fireworkColors.length)];
                 this.speedX = (targetX - x) / 50;
                 this.speedY = (targetY - y) / 50;
                 this.particles = [];
                 this.exploded = false;
-                this.radius = 2;
+                this.radius = 3;
+                this.isSpecial = isSpecial;
+                this.trail = [];
+                this.maxTrailLength = 5;
             }
             
             update() {
@@ -297,6 +483,12 @@
                     this.y += this.speedY;
                     
                     // 添加尾迹效果
+                    this.trail.push({x: this.x, y: this.y});
+                    if (this.trail.length > this.maxTrailLength) {
+                        this.trail.shift();
+                    }
+                    
+                    // 添加尾迹粒子
                     this.particles.push(new Particle(this.x, this.y, this.color));
                     
                     // 到达目标位置时爆炸
@@ -316,26 +508,59 @@
             
             explode() {
                 this.exploded = true;
-                const particleCount = Math.floor(Math.random() * 50) + 50;
+                const particleCount = this.isSpecial ? 100 : Math.floor(Math.random() * 60) + 60;
                 
                 for (let i = 0; i < particleCount; i++) {
                     this.particles.push(new Particle(this.x, this.y, this.color));
                 }
                 
-                // 随机添加一些不同颜色的粒子
-                const extraColorCount = Math.floor(Math.random() * 3) + 1;
-                for (let i = 0; i < extraColorCount; i++) {
-                    const extraColor = fireworkColors[Math.floor(Math.random() * fireworkColors.length)];
-                    const extraParticleCount = Math.floor(Math.random() * 20) + 10;
-                    
-                    for (let j = 0; j < extraParticleCount; j++) {
-                        this.particles.push(new Particle(this.x, this.y, extraColor));
+                // 如果是特殊烟花，添加心形爆炸
+                if (this.isSpecial) {
+                    this.createHeartShape();
+                } else {
+                    // 随机添加一些不同颜色的粒子
+                    const extraColorCount = Math.floor(Math.random() * 3) + 1;
+                    for (let i = 0; i < extraColorCount; i++) {
+                        const extraColor = fireworkColors[Math.floor(Math.random() * fireworkColors.length)];
+                        const extraParticleCount = Math.floor(Math.random() * 25) + 15;
+                        
+                        for (let j = 0; j < extraParticleCount; j++) {
+                            this.particles.push(new Particle(this.x, this.y, extraColor));
+                        }
                     }
+                }
+            }
+            
+            createHeartShape() {
+                const heartColor = "#FF6B93";
+                const heartParticles = 50;
+                
+                for (let i = 0; i < heartParticles; i++) {
+                    const angle = (i / heartParticles) * Math.PI * 2;
+                    const t = angle;
+                    const x = 16 * Math.pow(Math.sin(t), 3);
+                    const y = -(13 * Math.cos(t) - 5 * Math.cos(2*t) - 2 * Math.cos(3*t) - Math.cos(4*t));
+                    
+                    const particle = new Particle(this.x + x * 3, this.y + y * 3, heartColor);
+                    particle.speedX = x * 0.3;
+                    particle.speedY = y * 0.3;
+                    this.particles.push(particle);
                 }
             }
             
             draw() {
                 // 绘制尾迹
+                for (let i = 0; i < this.trail.length; i++) {
+                    const point = this.trail[i];
+                    ctx.beginPath();
+                    ctx.arc(point.x, point.y, this.radius * (i/this.trail.length), 0, Math.PI * 2);
+                    ctx.fillStyle = this.color;
+                    ctx.globalAlpha = i/this.trail.length * 0.7;
+                    ctx.fill();
+                }
+                ctx.globalAlpha = 1;
+                
+                // 绘制所有粒子
                 for (const particle of this.particles) {
                     particle.draw();
                 }
@@ -346,6 +571,16 @@
                     ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
                     ctx.fillStyle = this.color;
                     ctx.fill();
+                    
+                    // 如果是特殊烟花，添加光晕效果
+                    if (this.isSpecial) {
+                        ctx.beginPath();
+                        ctx.arc(this.x, this.y, this.radius + 5, 0, Math.PI * 2);
+                        ctx.fillStyle = this.color;
+                        ctx.globalAlpha = 0.3;
+                        ctx.fill();
+                        ctx.globalAlpha = 1;
+                    }
                 }
             }
             
@@ -365,10 +600,10 @@
             
             startAutoLaunch() {
                 this.autoLaunchInterval = setInterval(() => {
-                    if (!this.isPaused && this.fireworks.length < 10) {
+                    if (!this.isPaused && this.fireworks.length < 8) {
                         this.launchRandomFirework();
                     }
-                }, 800);
+                }, 1000);
             }
             
             launchRandomFirework() {
@@ -380,11 +615,30 @@
                 this.fireworks.push(new Firework(startX, startY, targetX, targetY));
             }
             
+            launchMengyunFirework() {
+                const startX = canvas.width / 2;
+                const startY = canvas.height;
+                const targetX = canvas.width / 2;
+                const targetY = canvas.height * 0.4;
+                
+                const specialFirework = new Firework(startX, startY, targetX, targetY, true);
+                this.fireworks.push(specialFirework);
+                
+                // 同时发射几个普通烟花
+                setTimeout(() => {
+                    for (let i = 0; i < 3; i++) {
+                        setTimeout(() => {
+                            this.launchRandomFirework();
+                        }, i * 200);
+                    }
+                }, 500);
+            }
+            
             launchMultipleFireworks(count) {
                 for (let i = 0; i < count; i++) {
                     setTimeout(() => {
                         this.launchRandomFirework();
-                    }, i * 100);
+                    }, i * 150);
                 }
             }
             
@@ -428,26 +682,141 @@
         
         // 祝福语相关功能
         function getRandomWish() {
-            const randomIndex = Math.floor(Math.random() * wishes.length);
-            return wishes[randomIndex];
+            const randomIndex = Math.floor(Math.random() * mengyunWishes.length);
+            return mengyunWishes[randomIndex];
         }
+        
+        function getRandomPersonalizedWish() {
+            const randomIndex = Math.floor(Math.random() * personalizedWishes.length);
+            return personalizedWishes[randomIndex];
+        }
+        
+        // 显示消息函数
+        function showMessage(message, duration = 2000) {
+            // 创建一个临时消息框
+            const messageBox = document.createElement('div');
+            messageBox.textContent = message;
+            messageBox.style.cssText = `
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background: rgba(255, 107, 147, 0.9);
+                color: white;
+                padding: 20px 30px;
+                border-radius: 20px;
+                font-size: 1.3rem;
+                z-index: 1000;
+                box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+                border: 3px solid white;
+                animation: fadeInOut 2s forwards;
+                text-align: center;
+                max-width: 80%;
+            `;
+            
+            document.body.appendChild(messageBox);
+            
+            // 动画结束后移除消息框
+            setTimeout(() => {
+                if (messageBox.parentNode) {
+                    document.body.removeChild(messageBox);
+                }
+            }, duration);
+        }
+        
+        // 添加CSS动画
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeInOut {
+                0% { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
+                20% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
+                80% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+                100% { opacity: 0; transform: translate(-50%, -50%) scale(0.9); }
+            }
+            
+            @keyframes floatUp {
+                0% { transform: translateY(0) scale(1); opacity: 1; }
+                100% { transform: translateY(-100px) scale(0.5); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
         
         // 初始化祝福语
         wishTextElement.textContent = getRandomWish();
+        personalizedWishElement.textContent = getRandomPersonalizedWish();
         
         // 事件监听
         newWishBtn.addEventListener('click', () => {
             wishTextElement.textContent = getRandomWish();
+            personalizedWishElement.textContent = getRandomPersonalizedWish();
+            
             // 每次点击祝福语也发射一些烟花庆祝
             fireworksManager.launchMultipleFireworks(3);
+            
+            // 添加按钮动画
+            newWishBtn.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                newWishBtn.style.transform = '';
+            }, 150);
         });
         
         moreFireworksBtn.addEventListener('click', () => {
-            fireworksManager.launchMultipleFireworks(5);
+            fireworksManager.launchMultipleFireworks(6);
+        });
+        
+        mengyunFireworksBtn.addEventListener('click', () => {
+            fireworksManager.launchMengyunFirework();
+            showMessage("徐梦云专属烟花绽放！", 1500);
         });
         
         pauseFireworksBtn.addEventListener('click', () => {
             fireworksManager.togglePause();
+        });
+        
+        specialEffectBtn.addEventListener('click', () => {
+            // 特效祝福：同时更换祝福语和发射大量烟花
+            wishTextElement.textContent = getRandomWish();
+            personalizedWishElement.textContent = getRandomPersonalizedWish();
+            
+            // 发射大量烟花
+            fireworksManager.launchMultipleFireworks(8);
+            
+            // 显示特效消息
+            showMessage("✨ 2026年，徐梦云专属祝福 ✨", 2000);
+            
+            // 添加一些视觉特效
+            document.body.style.animation = "none";
+            setTimeout(() => {
+                document.body.style.animation = "pulseEffect 0.5s";
+            }, 10);
+            
+            // 添加脉冲效果CSS
+            if (!document.querySelector('#pulse-effect')) {
+                const pulseStyle = document.createElement('style');
+                pulseStyle.id = 'pulse-effect';
+                pulseStyle.textContent = `
+                    @keyframes pulseEffect {
+                        0% { filter: brightness(1); }
+                        50% { filter: brightness(1.3); }
+                        100% { filter: brightness(1); }
+                    }
+                `;
+                document.head.appendChild(pulseStyle);
+            }
+        });
+        
+        // 徐梦云徽章点击事件
+        mengyunBadge.addEventListener('click', () => {
+            showMessage("徐梦云，2026年元旦快乐！愿新的一年更加美好！", 2500);
+            fireworksManager.launchMengyunFirework();
+            
+            // 徽章动画
+            mengyunBadge.style.transform = 'scale(1.2) rotate(360deg)';
+            mengyunBadge.style.background = 'rgba(255, 107, 147, 0.4)';
+            setTimeout(() => {
+                mengyunBadge.style.transform = '';
+                mengyunBadge.style.background = '';
+            }, 500);
         });
         
         // 点击页面任意位置也可以发射烟花
@@ -459,14 +828,44 @@
             const targetX = e.clientX;
             const targetY = e.clientY;
             
-            fireworksManager.fireworks.push(new Firework(startX, startY, targetX, targetY));
+            fireworksManager.fireworks.push(new Firework(startX, startY, targetX, targetY, Math.random() > 0.7));
         });
         
         // 页面加载时自动发射一些烟花
         window.addEventListener('load', () => {
             setTimeout(() => {
-                fireworksManager.launchMultipleFireworks(3);
-            }, 500);
+                fireworksManager.launchMultipleFireworks(4);
+                showMessage("欢迎来到徐梦云2026元旦祝福页面！", 2000);
+            }, 800);
+        });
+        
+        // 添加键盘快捷键
+        document.addEventListener('keydown', (e) => {
+            switch(e.key) {
+                case ' ':
+                    // 空格键切换祝福
+                    newWishBtn.click();
+                    break;
+                case 'f':
+                case 'F':
+                    // F键发射更多烟花
+                    moreFireworksBtn.click();
+                    break;
+                case 'm':
+                case 'M':
+                    // M键发射梦云专属烟花
+                    mengyunFireworksBtn.click();
+                    break;
+                case 'p':
+                case 'P':
+                    // P键暂停/继续烟花
+                    pauseFireworksBtn.click();
+                    break;
+                case 'Enter':
+                    // Enter键触发特效
+                    specialEffectBtn.click();
+                    break;
+            }
         });
     </script>
 </body>
