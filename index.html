@@ -1,872 +1,1117 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>徐梦云专属元旦祝福 | 2026新年快乐</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
-        }
-
-        body {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-            color: #fff;
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            position: relative;
-            z-index: 10;
-        }
-
-        /* 徐梦云专属横幅 */
-        .mengyun-banner {
-            background: linear-gradient(90deg, #ff6b93, #ff8fab, #c1e1ff, #5a8cd0);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            font-size: 2.8rem;
-            font-weight: bold;
-            margin-bottom: 20px;
-            text-align: center;
-            padding: 10px 30px;
-            border-radius: 20px;
-            position: relative;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
-        }
-
-        .mengyun-banner:before, .mengyun-banner:after {
-            content: "✦";
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #ff6b93;
-            font-size: 1.8rem;
-        }
-
-        .mengyun-banner:before {
-            left: 0;
-        }
-
-        .mengyun-banner:after {
-            right: 0;
-        }
-
-        header {
-            text-align: center;
-            padding: 20px;
-            width: 100%;
-        }
-
-        .main-title {
-            font-size: 3.8rem;
-            margin-bottom: 10px;
-            background: linear-gradient(90deg, #ffd700, #ff8c00, #ff6b93);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            text-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
-            letter-spacing: 2px;
-        }
-
-        .year {
-            font-size: 2.8rem;
-            margin-bottom: 20px;
-            color: #ff7e5f;
-            font-weight: bold;
-            position: relative;
-            display: inline-block;
-        }
-
-        .year:after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 4px;
-            background: linear-gradient(90deg, #ff6b93, #ffd700);
-            border-radius: 2px;
-        }
-
-        .content {
-            width: 100%;
-            max-width: 900px;
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(12px);
-            border-radius: 25px;
-            padding: 50px;
-            margin: 30px 0;
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            text-align: center;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .content:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 5px;
-            background: linear-gradient(90deg, #ff6b93, #ffd700, #5a8cd0);
-        }
-
-        .wishes-title {
-            font-size: 2.2rem;
-            margin-bottom: 30px;
-            color: #ffd700;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-        }
-
-        .wishes-title i {
-            color: #ff6b93;
-        }
-
-        .wishes-text {
-            font-size: 1.4rem;
-            line-height: 1.9;
-            margin-bottom: 40px;
-            min-height: 120px;
-            padding: 20px;
-            border-radius: 15px;
-            background: rgba(255, 255, 255, 0.05);
-            border-left: 4px solid #ff6b93;
-        }
-
-        .wishes-text p {
-            margin-bottom: 20px;
-        }
-
-        .personalized-wish {
-            color: #ffd700;
-            font-weight: bold;
-            font-size: 1.5rem;
-            margin-top: 20px;
-            padding: 15px;
-            border-radius: 10px;
-            background: rgba(255, 107, 147, 0.1);
-            border: 1px dashed #ff6b93;
-        }
-
-        .new-wish-btn {
-            background: linear-gradient(90deg, #ff6b93, #ff8fab);
-            border: none;
-            color: white;
-            padding: 18px 45px;
-            font-size: 1.2rem;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: all 0.3s;
-            margin-top: 20px;
-            box-shadow: 0 8px 20px rgba(255, 107, 147, 0.5);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            font-weight: bold;
-        }
-
-        .new-wish-btn:hover {
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 12px 25px rgba(255, 107, 147, 0.7);
-        }
-
-        .fireworks-control {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 25px;
-            margin-top: 40px;
-            flex-wrap: wrap;
-        }
-
-        .control-btn {
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            color: white;
-            padding: 15px 30px;
-            font-size: 1.1rem;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: all 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .control-btn:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: translateY(-3px);
-        }
-
-        .special-btn {
-            background: linear-gradient(90deg, #5a8cd0, #c1e1ff);
-            border: none;
-        }
-
-        .footer {
-            margin-top: 50px;
-            text-align: center;
-            padding: 25px;
-            font-size: 1.1rem;
-            opacity: 0.8;
-            width: 100%;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .footer p {
-            margin-bottom: 10px;
-        }
-
-        .heart {
-            color: #ff6b93;
-            animation: heartbeat 1.5s infinite;
-        }
-
-        @keyframes heartbeat {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-        }
-
-        /* 烟花画布 */
-        #fireworks-canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 1;
-        }
-
-        /* 徐梦云专属徽章 */
-        .mengyun-badge {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: rgba(255, 107, 147, 0.2);
-            border: 2px solid #ff6b93;
-            border-radius: 50%;
-            width: 80px;
-            height: 80px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-            font-size: 1.2rem;
-            z-index: 20;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .mengyun-badge:hover {
-            transform: scale(1.1) rotate(10deg);
-            background: rgba(255, 107, 147, 0.3);
-        }
-
-        .mengyun-badge:after {
-            content: "云";
-            position: absolute;
-            font-size: 2rem;
-            color: #ffd700;
-        }
-
-        /* 响应式设计 */
-        @media (max-width: 768px) {
-            .mengyun-banner { font-size: 2rem; }
-            .main-title { font-size: 2.8rem; }
-            .year { font-size: 2.2rem; }
-            .content { padding: 30px 20px; }
-            .wishes-title { font-size: 1.8rem; }
-            .wishes-text { font-size: 1.2rem; }
-            .fireworks-control { flex-direction: column; gap: 15px; }
-            .control-btn { width: 100%; justify-content: center; }
-            .mengyun-badge { width: 60px; height: 60px; bottom: 10px; right: 10px; }
-        }
-    </style>
+<html lang="zh-CN" data-page-node-id="sbFhDNwn1H7P1ZWnydt1i7">
+<head data-page-node-id="XHokmKrP4KDP5VpQxz4y9Q">
+<meta charset="UTF-8" data-page-node-id="dWySRYSVr1izxDSqK4AjCF">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" data-page-node-id="euDwx29nnTG4xS2Zro1e3W">
+<title>云上拾梦 · 元旦 CG</title>
+<style>
+  :root{--ink:#f8f4ff;--muted:rgba(248,244,255,.62)}
+  *{box-sizing:border-box}
+  html,body{height:100%;margin:0;overflow:hidden;background:#06091d}
+  body{font-family:"PingFang SC","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased}
+  #scene{position:fixed;inset:0;display:block;width:100%;height:100%}
+  .vignette{position:fixed;inset:0;pointer-events:none;background:radial-gradient(ellipse at 50% 44%,transparent 30%,rgba(4,6,20,.66) 100%)}
+  .hud{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;pointer-events:none;text-align:center;padding:24px}
+  .kicker{font-size:clamp(10px,1.15vw,14px);letter-spacing:.52em;text-indent:.52em;text-transform:uppercase;color:var(--muted);opacity:0;animation:kicker 48s linear infinite}
+  .title{margin:16px 0 12px;font-size:clamp(38px,7.2vw,104px);font-weight:700;letter-spacing:.26em;text-indent:.26em;line-height:1.1;opacity:0;animation:title 48s cubic-bezier(.2,.7,.2,1) infinite;text-shadow:0 0 26px rgba(180,200,255,.55),0 10px 46px rgba(255,168,214,.32)}
+  .sub{margin:0;font-size:clamp(12px,1.5vw,18px);letter-spacing:.44em;text-indent:.44em;color:var(--muted);opacity:0;animation:sub 48s linear infinite}
+  @keyframes kicker{0%,52%{opacity:0;transform:translateY(-10px);filter:blur(8px)}57%,77%{opacity:1;transform:none;filter:blur(0)}83%,100%{opacity:0;transform:translateY(-8px);filter:blur(8px)}}
+  @keyframes title{0%,54%{opacity:0;transform:translateY(34px) scale(.94);filter:blur(16px)}58%,77%{opacity:1;transform:none;filter:blur(0)}84%,100%{opacity:0;transform:translateY(-20px) scale(1.04);filter:blur(12px)}}
+  @keyframes sub{0%,57%{opacity:0;transform:translateY(14px)}62%,77%{opacity:1;transform:none}84%,100%{opacity:0;transform:translateY(-10px)}}
+  .controls{position:fixed;left:0;right:0;bottom:max(20px,env(safe-area-inset-bottom));display:flex;justify-content:center;gap:10px;z-index:5}
+  button{appearance:none;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.07);backdrop-filter:blur(10px);color:var(--ink);padding:9px 18px;border-radius:999px;font:500 12px/1 inherit;letter-spacing:.14em;cursor:pointer;transition:background .2s,border-color .2s,transform .2s}
+  button:hover{background:rgba(255,255,255,.16);border-color:rgba(255,255,255,.4);transform:translateY(-2px)}
+  button:active{transform:translateY(0)}
+  button.on{background:rgba(255,220,180,.16);border-color:rgba(255,220,180,.5)}
+  .tip{position:fixed;top:24px;left:0;right:0;text-align:center;font-size:11px;letter-spacing:.24em;color:rgba(248,244,255,.4);pointer-events:none;animation:tip 48s linear infinite}
+  @keyframes tip{0%,5%{opacity:0}10%,32%{opacity:1}42%,100%{opacity:0}}
+  @media (prefers-reduced-motion:reduce){.kicker,.title,.sub,.tip{animation:none;opacity:1;filter:none;transform:none}}
+</style>
 </head>
-<body>
-    <!-- 烟花画布 -->
-    <canvas id="fireworks-canvas"></canvas>
-    
-    <!-- 徐梦云专属徽章 -->
-    <div class="mengyun-badge" id="mengyun-badge" title="点击查看专属惊喜"></div>
-    
-    <div class="container">
-        <!-- 徐梦云专属横幅 -->
-        <div class="mengyun-banner">✦ 徐梦云专属元旦祝福 ✦</div>
-        
-        <header>
-            <h1 class="main-title">元旦快乐 2026</h1>
-            <div class="year">2026</div>
-        </header>
-        
-        <div class="content">
-            <h2 class="wishes-title">
-                <i class="fas fa-star"></i> 新年祝福 <i class="fas fa-star"></i>
-            </h2>
-            <div class="wishes-text">
-                <p id="wish-text">亲爱的梦云，元旦到来，愿你在2026年里，所有的希望都能如愿，所有的梦想都能实现，所有的等候都能出现，所有的付出都能兑现！</p>
-                <div class="personalized-wish" id="personalized-wish">愿你的2026年如星辰般璀璨，如烟火般绚烂！</div>
-            </div>
-            
-            <button class="new-wish-btn" id="new-wish-btn">
-                <i class="fas fa-gift"></i> 换一句祝福
-            </button>
-        </div>
-        
-        <div class="fireworks-control">
-            <button class="control-btn" id="more-fireworks">
-                <i class="fas fa-fire"></i> 更多烟花
-            </button>
-            <button class="control-btn" id="mengyun-fireworks">
-                <i class="fas fa-heart"></i> 梦云专属烟花
-            </button>
-            <button class="control-btn" id="pause-fireworks">
-                <i class="fas fa-pause"></i> 暂停烟花
-            </button>
-            <button class="control-btn special-btn" id="special-effect">
-                <i class="fas fa-magic"></i> 特效祝福
-            </button>
-        </div>
-        
-        <div class="footer">
-            <p>祝福徐梦云和家人在2026年元旦快乐，新年新气象，万事皆如意！</p>
-            <p>Made with <span class="heart">❤️</span> for 徐梦云 | 2026年元旦特别版</p>
-        </div>
-    </div>
+<body data-page-node-id="v4Ge57fE0UGgldUr8GyL7f">
+<canvas id="scene" data-page-node-id="kAGJi11ivUdFmy0HRQ1b8i"></canvas>
+<div class="vignette" data-page-node-id="bqaFW0SFg3wyhfWLkUXwXv"></div>
+<div class="tip" data-page-node-id="FtqYvC0zNdyPEr29CzQ4OT">点击画面 · 星光与音乐同启</div>
+<div class="hud" data-page-node-id="RHfJpIkm9CRlxj5xRpExqf">
+  <div class="kicker" data-page-node-id="eBRPUHIkYsfV4IH2rlEV7J">A DREAM ABOVE THE CLOUDS</div>
+  <h1 class="title" data-page-node-id="hkCJwcQ8b7MQtbblaEWAXd">元旦快乐</h1>
+  <p class="sub" data-page-node-id="O3yKqJ2iGFIW2GK9Tb3vEl">云上拾梦 · 新岁启航</p>
+</div>
+<div class="controls" data-page-node-id="8LcC8RI0jnWf2IUgIowjlc">
+  <button id="replay" type="button" data-page-node-id="V1vTWznTjJz6f62bx08gp2">重播</button>
+  <button id="music" type="button" aria-pressed="false" data-page-node-id="I3jgAVJtBSVzYt9LsmppiQ">音乐：关</button>
+  <button id="fullscreen" type="button" data-page-node-id="iAlyHS1mbd8utqoWeofZ5y">全屏</button>
+</div>
 
-    <script>
-        // 徐梦云专属祝福语数组
-        const mengyunWishes = [
-            "亲爱的梦云，2026年元旦快乐！愿新的一年带给你无限的欢乐、幸福与成功。",
-            "梦云，新年新气象！愿你的2026年如烟花般绚烂多彩，精彩不断，梦想成真！",
-            "祝福梦云在新的一年里，心想事成，万事如意，阖家幸福安康，每天都充满阳光！",
-            "元旦到，福气到！愿梦云在2026年里，事业顺利，身体健康，笑口常开，越来越美丽！",
-            "愿2026年的阳光照亮梦云的前程，带给你温暖、希望和无限的机遇，一切顺利！",
-            "元旦佳节，祝梦云丢掉烦恼，拥抱快乐，新的一年一切顺利，每天都开心幸福！",
-            "愿新年的钟声为梦云带来平安喜乐，愿你的每一天都充满阳光、欢笑和爱！",
-            "元旦之际，送上最真挚的祝福：愿梦云生活美满，工作顺心，梦想成真，永远年轻！",
-            "新的一年，新的开始，愿梦云乘风破浪，勇往直前，创造属于自己的辉煌2026！",
-            "梦云，元旦快乐！愿这特别的一天为你带来一整年的好运、财富和无限的快乐！",
-            "2026年，愿梦云所有的努力都有回报，所有的期待都能实现，所有的日子都闪闪发光！",
-            "祝福梦云在新的一年里，爱情甜蜜，友情长存，亲情温暖，人生圆满幸福！",
-            "愿2026年为梦云开启新的篇章，带来新的机遇，实现新的梦想，收获新的成功！",
-            "元旦来临，愿梦云的生活如诗如画，事业如日中天，心情如沐春风，永远美丽动人！",
-            "2026年，愿梦云每一天都充满正能量，每一步都走向成功，每一刻都感受到幸福！"
-        ];
+<script>
+(() => {
+  'use strict';
 
-        // 个性化专属祝福
-        const personalizedWishes = [
-            "愿你的2026年如星辰般璀璨，如烟火般绚烂！",
-            "梦云的2026，注定是不平凡的一年！",
-            "新的一年，愿梦云被世界温柔以待！",
-            "2026，梦云要更加闪耀夺目！",
-            "愿所有美好，都在2026年与梦云不期而遇！"
-        ];
+  // 修改这里即可切换年份（默认下一个元旦）
+  const YEAR = '2027';
+  const LOOP = 48000;
 
-        // 烟花颜色数组 - 添加更多梦幻色彩
-        const fireworkColors = [
-            "#FF5252", "#FF4081", "#E040FB", "#7C4DFF", 
-            "#536DFE", "#448AFF", "#40C4FF", "#18FFFF",
-            "#64FFDA", "#69F0AE", "#B2FF59", "#EEFF41",
-            "#FFFF00", "#FFD740", "#FFAB40", "#FF6E40",
-            "#FF6B93", "#FF8FAB", "#C1E1FF", "#5A8CD0"  // 徐梦云专属色系
-        ];
+  const canvas = document.getElementById('scene');
+  const ctx = canvas.getContext('2d', { alpha: false });
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-        // 获取DOM元素
-        const wishTextElement = document.getElementById('wish-text');
-        const personalizedWishElement = document.getElementById('personalized-wish');
-        const newWishBtn = document.getElementById('new-wish-btn');
-        const moreFireworksBtn = document.getElementById('more-fireworks');
-        const mengyunFireworksBtn = document.getElementById('mengyun-fireworks');
-        const pauseFireworksBtn = document.getElementById('pause-fireworks');
-        const specialEffectBtn = document.getElementById('special-effect');
-        const mengyunBadge = document.getElementById('mengyun-badge');
-        
-        // 画布和上下文
-        const canvas = document.getElementById('fireworks-canvas');
-        const ctx = canvas.getContext('2d');
-        
-        // 设置画布尺寸
-        function resizeCanvas() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
+  let W = 0, H = 0, DPR = 1;
+  let start = performance.now();
+  let stars = [], clouds = [], particles = [], bubbles = [], bursts = [], river = [];
+  let grainPattern = null;
+  let audio = null, userDisabledMusic = false, gestureDone = false;
+  const musicMarkers = [
+    { t: 6000, f: 523.25 }, { t: 16000, f: 659.25 },
+    { t: 24000, f: 783.99 }, { t: 28000, f: 1046.5 },
+    { t: 37500, f: 880 }
+  ];
+  const musicBtn = document.getElementById('music');
+  let mouse = { x: 0, y: 0 }, pmouse = { x: 0, y: 0 };
+
+  const rand = (a, b) => a + Math.random() * (b - a);
+  const clamp = (v, a = 0, b = 1) => Math.max(a, Math.min(b, v));
+  const easeOut = t => 1 - Math.pow(1 - t, 3);
+  const easeInOut = t => t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+  const lerp = (a, b, t) => a + (b - a) * t;
+  const windowAt = (t, a, b, c, d) => clamp((t - a) / (b - a)) * (1 - clamp((t - c) / (d - c)));
+  const bezier = (a, b, c, d, u) => {
+    const v = 1 - u;
+    return v * v * v * a + 3 * v * v * u * b + 3 * v * u * u * c + u * u * u * d;
+  };
+
+  // 叙事线：一叶纸船的追梦旅程（以物件为主角，不出现人名）
+  const chapters = [
+    { from: 0, to: 8000, label: '一 · 夜航' },
+    { from: 8000, to: 16000, label: '二 · 风起' },
+    { from: 16000, to: 24000, label: '三 · 逐光' },
+    { from: 24000, to: 28000, label: '四 · 穿门' },
+    { from: 28000, to: 38000, label: '五 · 梦成' },
+    { from: 38000, to: 48000, label: '六 · 启航' }
+  ];
+
+  function boatPos(t) {
+    const cx = W / 2, cy = H * .43, base = Math.min(W, H);
+    if (t < 8000) {
+      const p = clamp(t / 8000);
+      return {
+        x: lerp(W * .82, W * .62, p),
+        y: lerp(H * .74, H * .67, p) + Math.sin(t / 900) * 5,
+        s: 1, a: clamp(t / 1400), r: Math.sin(t / 1300) * .035
+      };
+    }
+    if (t < 16000) {
+      const p = easeInOut(clamp((t - 8000) / 8000));
+      return {
+        x: lerp(W * .62, W * .54, p),
+        y: lerp(H * .67, H * .56, p) + Math.sin(t / 800) * 4,
+        s: 1 + .12 * p, a: 1, r: Math.sin(t / 1100) * .06
+      };
+    }
+    if (t < 24000) {
+      const p = easeInOut(clamp((t - 16000) / 8000));
+      return {
+        x: lerp(W * .54, cx, p),
+        y: lerp(H * .56, cy, p) + Math.sin(t / 700) * 3,
+        s: 1.12 + .3 * p, a: 1, r: lerp(.06, 0, p)
+      };
+    }
+    if (t < 27000) {
+      const p = clamp((t - 24000) / 3000);
+      return { x: cx, y: cy, s: 1.42 + p * .8, a: 1 - p, r: 0 };
+    }
+    if (t < 37500) {
+      const ang = (t - 27000) / 10500 * Math.PI * 2 - Math.PI / 2;
+      const r = base * .4;
+      return {
+        x: cx + Math.cos(ang) * r * 1.25,
+        y: cy + Math.sin(ang) * r * .62,
+        s: .85, a: .34, r: ang * .06
+      };
+    }
+    if (t < 48000) {
+      const p = clamp((t - 37500) / 10500);
+      const yStart = cy - base * .4 * .62;
+      return {
+        x: lerp(cx, W * .86, easeInOut(p)),
+        y: lerp(yStart, H * .71, p) + Math.sin(t / 700) * 4,
+        s: lerp(.85, .72, p),
+        a: clamp((48000 - t) / 3500),
+        r: Math.sin(t / 900) * .05
+      };
+    }
+    return { x: cx, y: cy, s: 1, a: 0, r: 0 };
+  }
+
+  function resize() {
+    DPR = Math.min(window.devicePixelRatio || 1, 2);
+    W = window.innerWidth;
+    H = window.innerHeight;
+    canvas.width = Math.round(W * DPR);
+    canvas.height = Math.round(H * DPR);
+    canvas.style.width = W + 'px';
+    canvas.style.height = H + 'px';
+    ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+    buildScene();
+    buildGrain();
+  }
+
+  function buildGrain() {
+    const c = document.createElement('canvas');
+    c.width = c.height = 128;
+    const g = c.getContext('2d');
+    const img = g.createImageData(128, 128);
+    for (let i = 0; i < 128 * 128; i++) {
+      const v = 120 + Math.random() * 135;
+      img.data[i * 4] = img.data[i * 4 + 1] = img.data[i * 4 + 2] = v;
+      img.data[i * 4 + 3] = 20;
+    }
+    g.putImageData(img, 0, 0);
+    grainPattern = ctx.createPattern(c, 'repeat');
+  }
+
+  // 用径向渐变堆叠出柔和的“体积云”贴图
+  function makeCloudSprite(w, h, palette, seed) {
+    const c = document.createElement('canvas');
+    c.width = w; c.height = h;
+    const g = c.getContext('2d');
+    let s = seed >>> 0;
+    const rnd = () => ((s = (s * 1664525 + 1013904223) >>> 0) / 4294967296);
+    for (let i = 0; i < 56; i++) {
+      const px = w * (.1 + rnd() * .8);
+      const py = h * (.26 + rnd() * .56);
+      const r = h * (.12 + rnd() * .28);
+      const col = palette[Math.floor(rnd() * palette.length)];
+      const grad = g.createRadialGradient(px, py, 0, px, py, r);
+      grad.addColorStop(0, col.replace('A', '.36'));
+      grad.addColorStop(.55, col.replace('A', '.14'));
+      grad.addColorStop(1, col.replace('A', '0'));
+      g.fillStyle = grad;
+      g.beginPath(); g.arc(px, py, r, 0, Math.PI * 2); g.fill();
+    }
+    return c;
+  }
+
+  function buildScene() {
+    stars = [];
+    const starCount = Math.round(clamp(W * H / 8000, 110, 300));
+    for (let i = 0; i < starCount; i++) {
+      stars.push({
+        x: rand(0, W), y: rand(0, H * .9),
+        r: rand(.4, 1.8), phase: rand(0, Math.PI * 2),
+        speed: rand(.5, 2.2), hue: Math.random() < .22 ? '255,214,190' : '226,234,255'
+      });
+    }
+
+    const palettes = [
+      ['rgba(168,160,255,A)', 'rgba(120,130,220,A)', 'rgba(238,190,255,A)'],
+      ['rgba(255,186,214,A)', 'rgba(196,150,226,A)', 'rgba(255,224,206,A)'],
+      ['rgba(150,206,255,A)', 'rgba(188,178,255,A)', 'rgba(255,255,255,A)']
+    ];
+    const sprites = palettes.map((p, i) => makeCloudSprite(600, 260, p, 1234 + i * 977));
+    clouds = [];
+    const count = reduceMotion ? 7 : 13;
+    for (let i = 0; i < count; i++) {
+      const depth = i / count;
+      const scale = rand(.65, 1.8) * (.6 + depth * .75);
+      clouds.push({
+        sprite: sprites[i % sprites.length],
+        x: rand(-W * .25, W * 1.15),
+        y: H * (depth * .76 + .1) + rand(-48, 48),
+        w: 600 * scale, h: 260 * scale,
+        speed: rand(3, 17) * (i % 3 === 0 ? -1 : 1),
+        alpha: rand(.32, .82) * (.55 + depth * .45),
+        wave: rand(0, Math.PI * 2),
+        depth
+      });
+    }
+
+    buildParticles();
+
+    bubbles = [];
+    const kinds = ['moon', 'boat', 'star', 'key', 'feather', 'clock', 'star', 'moon'];
+    const n = reduceMotion ? 4 : 8;
+    for (let i = 0; i < n; i++) {
+      bubbles.push({
+        kind: kinds[i % kinds.length],
+        r: rand(18, 32),
+        phase: rand(0, Math.PI * 2),
+        dir: i % 2 ? 1 : -1,
+        orbit: rand(.33, .48),
+        alpha: rand(.55, .95)
+      });
+    }
+
+    river = [];
+    const colors = ['255,232,200', '210,225,255', '255,200,230'];
+    for (let i = 0; i < (reduceMotion ? 60 : 180); i++) {
+      river.push({
+        phase: Math.random(), speed: rand(.07, .18),
+        r: rand(.7, 2.1), c: colors[Math.floor(Math.random() * colors.length)]
+      });
+    }
+  }
+
+  // 采样文字像素，作为粒子的汇聚目标
+  function buildParticles() {
+    const off = document.createElement('canvas');
+    off.width = W; off.height = H;
+    const o = off.getContext('2d');
+    const fontSize = Math.min(W * (YEAR.length > 4 ? .2 : .27), H * .38, 380);
+    o.font = `900 ${fontSize}px "Arial Black","Helvetica Neue",Arial,sans-serif`;
+    o.textAlign = 'center';
+    o.textBaseline = 'middle';
+    o.fillStyle = '#fff';
+    o.fillText(YEAR, W / 2, H * .43);
+
+    const data = o.getImageData(0, 0, W, H).data;
+    const step = Math.max(3, Math.round(fontSize / 64));
+    const pts = [];
+    for (let y = 0; y < H; y += step) {
+      for (let x = 0; x < W; x += step) {
+        if (data[(y * W + x) * 4 + 3] > 110) pts.push({ x, y });
+      }
+    }
+    const max = reduceMotion ? 700 : 1700;
+    while (pts.length > max) pts.splice(Math.floor(Math.random() * pts.length), 1);
+
+    particles = pts.map(p => ({
+      tx: p.x, ty: p.y,
+      angle: rand(0, Math.PI * 2),
+      orbitR: rand(.16, 1.1),
+      spin: rand(-.9, .9),
+      size: rand(.8, 2.3),
+      delay: rand(0, 900),
+      driftX: rand(-160, 160), driftY: rand(-620, -180),
+      phase: rand(0, Math.PI * 2),
+      warm: Math.random() < .38
+    }));
+  }
+
+  function drawBackground(t) {
+    const g = ctx.createLinearGradient(0, 0, 0, H);
+    g.addColorStop(0, '#05081c');
+    g.addColorStop(.42, '#17153d');
+    g.addColorStop(.74, '#3c255e');
+    g.addColorStop(1, '#8a5178');
+    ctx.fillStyle = g;
+    ctx.fillRect(0, 0, W, H);
+
+    const warmth = windowAt(t, 6200, 13000, 39000, 46000);
+    const pulse = .9 + Math.sin(t / 2400) * .1;
+    const glow = ctx.createRadialGradient(W / 2, H * .82, 0, W / 2, H * .82, W * .68);
+    glow.addColorStop(0, `rgba(255,190,160,${(.16 + .22 * warmth) * pulse})`);
+    glow.addColorStop(.45, `rgba(215,140,200,${(.07 + .08 * warmth) * pulse})`);
+    glow.addColorStop(1, 'rgba(120,80,180,0)');
+    ctx.fillStyle = glow;
+    ctx.fillRect(0, 0, W, H);
+
+    ctx.save();
+    ctx.globalCompositeOperation = 'screen';
+    const band = ctx.createLinearGradient(0, H * .2, W, H * .62);
+    band.addColorStop(0, 'rgba(90,120,255,0)');
+    band.addColorStop(.5, `rgba(140,110,240,${.07 + .05 * warmth + .02 * Math.sin(t / 3200)})`);
+    band.addColorStop(1, 'rgba(255,140,190,0)');
+    ctx.fillStyle = band;
+    ctx.fillRect(0, 0, W, H);
+    ctx.restore();
+  }
+
+  function drawStars(t) {
+    const brightness = 1 - .45 * windowAt(t, 6500, 12000, 39000, 45000);
+    for (const s of stars) {
+      const a = (.22 + .78 * (.5 + .5 * Math.sin(t / 1000 * s.speed + s.phase))) * brightness;
+      ctx.fillStyle = `rgba(${s.hue},${a * .92})`;
+      ctx.beginPath(); ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2); ctx.fill();
+      if (s.r > 1.35 && a > .8) {
+        ctx.strokeStyle = `rgba(${s.hue},${(a - .8) * 1.5})`;
+        ctx.lineWidth = .6;
+        ctx.beginPath();
+        ctx.moveTo(s.x - s.r * 4, s.y); ctx.lineTo(s.x + s.r * 4, s.y);
+        ctx.moveTo(s.x, s.y - s.r * 4); ctx.lineTo(s.x, s.y + s.r * 4);
+        ctx.stroke();
+      }
+    }
+  }
+
+  function drawClouds(t, dt, layer) {
+    for (const c of clouds) {
+      if ((layer === 'far') !== (c.depth < .55)) continue;
+      c.x += c.speed * dt;
+      if (c.x > W + c.w) c.x = -c.w;
+      if (c.x < -c.w * 2) c.x = W + c.w;
+      const float = Math.sin(t / 2800 + c.wave) * 9;
+      const px = pmouse.x * (8 + c.depth * 28);
+      const py = pmouse.y * (4 + c.depth * 16);
+      ctx.globalAlpha = c.alpha * clamp(t / 2600);
+      ctx.drawImage(c.sprite, c.x + px, c.y + float + py, c.w, c.h);
+    }
+    ctx.globalAlpha = 1;
+  }
+
+  function drawMeteor(t, offset) {
+    const cycle = (t + offset) % 11000;
+    if (cycle > 1400) return;
+    const p = cycle / 1400;
+    const x = W * (.08 + p * .6);
+    const y = H * (.06 + p * .34);
+    const len = 110;
+    const g = ctx.createLinearGradient(x - len, y - len * .55, x, y);
+    g.addColorStop(0, 'rgba(255,255,255,0)');
+    g.addColorStop(1, 'rgba(255,246,230,.88)');
+    ctx.strokeStyle = g; ctx.lineWidth = 1.6;
+    ctx.beginPath(); ctx.moveTo(x - len, y - len * .55); ctx.lineTo(x, y); ctx.stroke();
+    ctx.fillStyle = 'rgba(255,250,240,.92)';
+    ctx.beginPath(); ctx.arc(x, y, 2, 0, Math.PI * 2); ctx.fill();
+  }
+
+  function drawGodRays(t) {
+    const a = clamp(windowAt(t, 6200, 8800, 14200, 17000)
+      + .4 * windowAt(t, 25500, 28500, 37000, 41000));
+    if (a <= 0) return;
+    const cx = W / 2, cy = H * .84;
+    const len = Math.max(W, H) * 1.05;
+    ctx.save();
+    ctx.globalCompositeOperation = 'screen';
+    for (let i = 0; i < 15; i++) {
+      const ang = -Math.PI / 2 + (i - 7) * .085 + Math.sin(t / 4600 + i) * .035;
+      const spread = .028 + .018 * Math.sin(t / 3100 + i * 1.7);
+      const x1 = cx + Math.cos(ang - spread) * len;
+      const y1 = cy + Math.sin(ang - spread) * len;
+      const x2 = cx + Math.cos(ang + spread) * len;
+      const y2 = cy + Math.sin(ang + spread) * len;
+      const g = ctx.createLinearGradient(cx, cy, x1, y1);
+      g.addColorStop(0, `rgba(255,216,186,${.085 * a})`);
+      g.addColorStop(1, 'rgba(255,180,220,0)');
+      ctx.fillStyle = g;
+      ctx.beginPath(); ctx.moveTo(cx, cy); ctx.lineTo(x1, y1); ctx.lineTo(x2, y2); ctx.closePath(); ctx.fill();
+    }
+    ctx.restore();
+  }
+
+  function drawLensFlare(t) {
+    let a = 0;
+    if (t > 7500 && t < 14000) a = Math.sin(Math.PI * (t - 7500) / 6500);
+    else if (t > 26500 && t < 32500) a = .55 * Math.sin(Math.PI * (t - 26500) / 6000);
+    if (a <= 0) return;
+    const sx = W / 2, sy = H * .8;
+    ctx.save();
+    ctx.globalCompositeOperation = 'lighter';
+    const spots = [
+      [0, 0, 90, '255,220,190', .15], [-.18, -.2, 20, '180,210,255', .22],
+      [.23, -.32, 30, '255,190,220', .17], [-.4, -.52, 13, '255,255,255', .26],
+      [.48, -.64, 24, '190,180,255', .13]
+    ];
+    for (const [ox, oy, r, c, al] of spots) {
+      const x = sx + ox * W, y = sy + oy * H;
+      const g = ctx.createRadialGradient(x, y, 0, x, y, r);
+      g.addColorStop(0, `rgba(${c},${al * a})`);
+      g.addColorStop(1, `rgba(${c},0)`);
+      ctx.fillStyle = g;
+      ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI * 2); ctx.fill();
+    }
+    const streak = ctx.createLinearGradient(sx - W * .5, sy, sx + W * .5, sy);
+    streak.addColorStop(0, 'rgba(255,220,190,0)');
+    streak.addColorStop(.5, `rgba(255,235,210,${.1 * a})`);
+    streak.addColorStop(1, 'rgba(255,220,190,0)');
+    ctx.fillStyle = streak;
+    ctx.fillRect(sx - W * .5, sy - 1, W, 2);
+    ctx.restore();
+  }
+
+  // 梦境之门：多层旋转星环
+  function drawPortal(t) {
+    const a = windowAt(t, 13000, 15500, 22000, 24500);
+    if (a <= 0) return;
+    const cx = W / 2, cy = H * .43;
+    const base = Math.min(W, H) * .19;
+    ctx.save();
+    ctx.globalCompositeOperation = 'lighter';
+    const halo = ctx.createRadialGradient(cx, cy, 0, cx, cy, base * 2.2);
+    halo.addColorStop(0, `rgba(190,180,255,${.16 * a})`);
+    halo.addColorStop(1, 'rgba(190,180,255,0)');
+    ctx.fillStyle = halo;
+    ctx.beginPath(); ctx.arc(cx, cy, base * 2.2, 0, Math.PI * 2); ctx.fill();
+
+    for (let i = 0; i < 4; i++) {
+      const r = base * (.62 + i * .34) * (1 + .12 * Math.sin(t / 1600 + i));
+      ctx.save();
+      ctx.translate(cx, cy);
+      ctx.rotate(t / (5200 + i * 1400) * (i % 2 ? -1 : 1));
+      ctx.strokeStyle = `rgba(${i % 2 ? '255,214,200' : '200,220,255'},${(.5 - i * .08) * a})`;
+      ctx.lineWidth = i === 0 ? 1.8 : 1.1;
+      ctx.setLineDash([8 + i * 5, 14 + i * 9]);
+      ctx.lineDashOffset = -t / 90;
+      ctx.beginPath(); ctx.ellipse(0, 0, r, r * .62, 0, 0, Math.PI * 2); ctx.stroke();
+      ctx.restore();
+    }
+    for (let i = 0; i < 30; i++) {
+      const ang = i / 30 * Math.PI * 2 + t / 3400;
+      const r = base * (1.4 + .12 * Math.sin(t / 900 + i));
+      const x = cx + Math.cos(ang) * r;
+      const y = cy + Math.sin(ang) * r * .62;
+      ctx.fillStyle = `rgba(255,244,230,${(.3 + .5 * Math.abs(Math.sin(t / 700 + i))) * a})`;
+      ctx.beginPath(); ctx.arc(x, y, 1.3, 0, Math.PI * 2); ctx.fill();
+    }
+    ctx.restore();
+  }
+
+  function drawRiver(t) {
+    const a = windowAt(t, 37000, 39800, 43800, 46500);
+    if (a <= 0) return;
+    ctx.save();
+    ctx.globalCompositeOperation = 'lighter';
+    for (const d of river) {
+      const prog = (t / 1000 * d.speed + d.phase) % 1;
+      const y = H * (1.08 - prog * 1.22);
+      const spread = (1 - prog) * W * .2 + 16;
+      const x = W / 2 + Math.sin(d.phase * 24 + prog * 7) * spread;
+      ctx.fillStyle = `rgba(${d.c},${a * (1 - prog) * .8})`;
+      ctx.beginPath(); ctx.arc(x, y, d.r * (1 - prog * .4), 0, Math.PI * 2); ctx.fill();
+    }
+    ctx.restore();
+  }
+
+  function drawParticles(t) {
+    const alpha = windowAt(t, 15800, 18200, 37200, 41800);
+    if (alpha <= 0) return;
+    const converge = clamp((t - 22000) / 4100);
+    const scatter = clamp((t - 37200) / 4300);
+    const shrink = 1 - .32 * clamp((t - 13000) / 9000);
+    const base = Math.min(W, H);
+    const cx = W / 2, cy = H * .43;
+
+    if (converge > .55 && scatter === 0) {
+      const g = ctx.createRadialGradient(cx, cy, 0, cx, cy, base * .46);
+      g.addColorStop(0, `rgba(255,226,196,${.18 * alpha * (converge - .55) / .45})`);
+      g.addColorStop(1, 'rgba(255,200,220,0)');
+      ctx.fillStyle = g;
+      ctx.fillRect(0, 0, W, H);
+    }
+
+    ctx.save();
+    ctx.globalCompositeOperation = 'lighter';
+    for (const p of particles) {
+      const ang = p.angle + t / 1000 * p.spin;
+      const r = base * p.orbitR * shrink;
+      const ox = cx + Math.cos(ang) * r * 1.22;
+      const oy = cy + Math.sin(ang) * r * .55;
+      const local = easeOut(clamp((t - 22000 - p.delay) / 3300));
+      const jitter = (1 - local) * 10;
+      let x = ox + (p.tx - ox) * local + Math.sin(t / 420 + p.phase) * jitter;
+      let y = oy + (p.ty - oy) * local + Math.cos(t / 380 + p.phase) * jitter;
+      if (scatter > 0) {
+        x += p.driftX * scatter + Math.sin(t / 600 + p.phase) * 18 * scatter;
+        y += p.driftY * scatter * scatter;
+      }
+      const twinkle = .72 + .28 * Math.sin(t / 300 + p.phase);
+      ctx.fillStyle = p.warm
+        ? `rgba(255,226,190,${alpha * twinkle})`
+        : `rgba(226,236,255,${alpha * twinkle})`;
+      ctx.beginPath(); ctx.arc(x, y, p.size, 0, Math.PI * 2); ctx.fill();
+    }
+    ctx.restore();
+  }
+
+  function drawIcon(kind, r) {
+    ctx.lineWidth = 1.4;
+    ctx.lineCap = 'round';
+    ctx.lineJoin = 'round';
+    switch (kind) {
+      case 'moon':
+        ctx.beginPath();
+        ctx.arc(0, 0, r, Math.PI * .32, Math.PI * 1.68);
+        ctx.arc(r * .42, -r * .1, r * .92, Math.PI * 1.55, Math.PI * .55, true);
+        ctx.stroke();
+        break;
+      case 'boat':
+        ctx.beginPath();
+        ctx.moveTo(-r, r * .15); ctx.lineTo(r, r * .15);
+        ctx.lineTo(r * .55, r * .62); ctx.lineTo(-r * .55, r * .62); ctx.closePath();
+        ctx.moveTo(0, -r * .7); ctx.lineTo(-r * .72, r * .12);
+        ctx.moveTo(0, -r * .7); ctx.lineTo(r * .72, r * .12);
+        ctx.stroke();
+        break;
+      case 'star': {
+        ctx.beginPath();
+        for (let i = 0; i < 10; i++) {
+          const a = -Math.PI / 2 + i * Math.PI / 5;
+          const rr = i % 2 ? r * .44 : r;
+          const x = Math.cos(a) * rr, y = Math.sin(a) * rr;
+          i ? ctx.lineTo(x, y) : ctx.moveTo(x, y);
         }
-        
-        // 初始化画布
-        resizeCanvas();
-        window.addEventListener('resize', resizeCanvas);
-        
-        // 烟花类
-        class Particle {
-            constructor(x, y, color) {
-                this.x = x;
-                this.y = y;
-                this.color = color;
-                this.radius = Math.random() * 4 + 1;
-                this.speedX = Math.random() * 8 - 4;
-                this.speedY = Math.random() * 8 - 4;
-                this.life = 40;
-                this.gravity = 0.05;
-                this.decay = Math.random() * 0.02 + 0.01;
-                this.alpha = 1;
-            }
-            
-            update() {
-                this.speedY += this.gravity;
-                this.x += this.speedX;
-                this.y += this.speedY;
-                this.life -= this.decay;
-                this.radius -= 0.06;
-                this.alpha = this.life / 40;
-            }
-            
-            draw() {
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-                ctx.fillStyle = this.color;
-                ctx.globalAlpha = this.alpha;
-                ctx.fill();
-                ctx.globalAlpha = 1;
-            }
-            
-            isAlive() {
-                return this.life > 0 && this.radius > 0;
-            }
+        ctx.closePath(); ctx.stroke();
+        break;
+      }
+      case 'key':
+        ctx.beginPath(); ctx.arc(-r * .35, -r * .3, r * .4, 0, Math.PI * 2); ctx.stroke();
+        ctx.beginPath(); ctx.moveTo(-r * .06, -r * .02); ctx.lineTo(r * .78, r * .76); ctx.stroke();
+        ctx.beginPath(); ctx.moveTo(r * .42, r * .4); ctx.lineTo(r * .62, r * .2);
+        ctx.moveTo(r * .62, r * .6); ctx.lineTo(r * .8, r * .42); ctx.stroke();
+        break;
+      case 'feather':
+        ctx.beginPath();
+        ctx.moveTo(-r * .55, r * .75);
+        ctx.quadraticCurveTo(r * .1, -r * .2, r * .65, -r * .72);
+        ctx.quadraticCurveTo(r * .3, r * .05, -r * .55, r * .75);
+        ctx.moveTo(-r * .35, r * .45); ctx.lineTo(r * .45, -r * .5);
+        ctx.stroke();
+        break;
+      case 'clock':
+        ctx.beginPath(); ctx.arc(0, 0, r * .85, 0, Math.PI * 2); ctx.stroke();
+        ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(0, -r * .5);
+        ctx.moveTo(0, 0); ctx.lineTo(r * .42, r * .18); ctx.stroke();
+        break;
+    }
+  }
+
+  // 引导纸船驶向星环的光轨
+  function drawLightPath(t) {
+    const a = windowAt(t, 12500, 15800, 23000, 25800);
+    if (a <= 0) return;
+    const cx = W / 2, cy = H * .43;
+    const p0 = [W * .08, H * .8], p1 = [W * .26, H * .64];
+    const p2 = [W * .33, H * .48], p3 = [cx, cy];
+    ctx.save();
+    ctx.globalCompositeOperation = 'lighter';
+    ctx.strokeStyle = `rgba(255,224,190,${.24 * a})`;
+    ctx.lineWidth = 1.2;
+    ctx.setLineDash([3, 12]);
+    ctx.lineDashOffset = -t / 55;
+    ctx.beginPath();
+    ctx.moveTo(p0[0], p0[1]);
+    ctx.bezierCurveTo(p1[0], p1[1], p2[0], p2[1], p3[0], p3[1]);
+    ctx.stroke();
+    ctx.setLineDash([]);
+    for (let i = 0; i < 9; i++) {
+      const u = (t / 2800 + i / 9) % 1;
+      const x = bezier(p0[0], p1[0], p2[0], p3[0], u);
+      const y = bezier(p0[1], p1[1], p2[1], p3[1], u);
+      ctx.fillStyle = `rgba(255,240,210,${a * (1 - u) * .7})`;
+      ctx.beginPath(); ctx.arc(x, y, 1.8, 0, Math.PI * 2); ctx.fill();
+    }
+    ctx.restore();
+  }
+
+  // 纸船：故事的视线焦点，船心的一点梦之光最终化为年份
+  function drawBoat(t) {
+    const pos = boatPos(t);
+    if (pos.a <= 0) return;
+
+    ctx.save();
+    ctx.globalCompositeOperation = 'lighter';
+    for (let i = 1; i <= 16; i++) {
+      const q = boatPos(Math.max(0, t - i * 110));
+      const a = pos.a * (1 - i / 17) * .45;
+      ctx.fillStyle = `rgba(255,226,186,${a})`;
+      ctx.beginPath();
+      ctx.arc(q.x, q.y - 8 * q.s, Math.max(.4, 1.6 * (1 - i / 20)), 0, Math.PI * 2);
+      ctx.fill();
+    }
+    ctx.restore();
+
+    ctx.save();
+    ctx.translate(pos.x, pos.y);
+    ctx.rotate(pos.r);
+    ctx.scale(pos.s, pos.s);
+    ctx.globalAlpha = pos.a;
+
+    const glow = ctx.createRadialGradient(0, -2, 2, 0, -2, 48);
+    glow.addColorStop(0, 'rgba(255,226,180,.3)');
+    glow.addColorStop(1, 'rgba(255,200,180,0)');
+    ctx.fillStyle = glow;
+    ctx.beginPath(); ctx.arc(0, -2, 48, 0, Math.PI * 2); ctx.fill();
+
+    ctx.shadowColor = 'rgba(255,220,190,.9)';
+    ctx.shadowBlur = 18;
+    ctx.lineWidth = 1.2;
+    ctx.strokeStyle = 'rgba(255,255,255,.95)';
+    ctx.fillStyle = 'rgba(255,248,236,.93)';
+    ctx.beginPath();
+    ctx.moveTo(-26, 2); ctx.lineTo(26, 2);
+    ctx.lineTo(17, 14); ctx.lineTo(-17, 14); ctx.closePath();
+    ctx.fill(); ctx.stroke();
+    ctx.fillStyle = 'rgba(238,236,255,.88)';
+    ctx.beginPath();
+    ctx.moveTo(0, -18); ctx.lineTo(-24, 2); ctx.lineTo(24, 2); ctx.closePath();
+    ctx.fill(); ctx.stroke();
+    ctx.shadowBlur = 0;
+    ctx.fillStyle = 'rgba(255,232,180,.98)';
+    ctx.beginPath(); ctx.arc(0, -4, 3 + Math.sin(t / 220) * .8, 0, Math.PI * 2); ctx.fill();
+    ctx.restore();
+
+    if (t > 24000 && t < 26500) {
+      const p = clamp((t - 24000) / 2500);
+      ctx.save();
+      ctx.globalCompositeOperation = 'lighter';
+      for (let i = 0; i < 3; i++) {
+        ctx.strokeStyle = `rgba(255,220,190,${(1 - p) * (.4 - i * .1)})`;
+        ctx.lineWidth = 1.2;
+        ctx.beginPath();
+        ctx.ellipse(pos.x, pos.y, 20 + p * 90 + i * 22, 10 + p * 45 + i * 11, 0, 0, Math.PI * 2);
+        ctx.stroke();
+      }
+      ctx.restore();
+    }
+  }
+
+  // 章节小字：强化故事节奏
+  function drawChapter(t) {
+    let label = '', alpha = 0;
+    for (const c of chapters) {
+      if (t >= c.from && t < c.to) {
+        label = c.label;
+        alpha = clamp((t - c.from) / 900) * (1 - clamp((c.to - t) / 900));
+        break;
+      }
+    }
+    if (!label || alpha <= 0) return;
+    ctx.save();
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.font = '500 12px "PingFang SC","Microsoft YaHei",sans-serif';
+    ctx.fillStyle = `rgba(248,244,255,${.52 * alpha})`;
+    ctx.shadowColor = 'rgba(180,200,255,.7)';
+    ctx.shadowBlur = 8;
+    ctx.fillText(label, W / 2, H - 86);
+    ctx.shadowBlur = 0;
+    ctx.strokeStyle = `rgba(248,244,255,${.26 * alpha})`;
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.moveTo(W / 2 - 18, H - 66);
+    ctx.lineTo(W / 2 + 18, H - 66);
+    ctx.stroke();
+    ctx.restore();
+  }
+
+  function drawBubbles(t) {
+    const visible = windowAt(t, 27500, 29500, 40800, 42800);
+    if (visible <= 0) return;
+    const base = Math.min(W, H);
+    const cx = W / 2, cy = H * .43;
+    ctx.save();
+    for (const b of bubbles) {
+      const ang = b.phase + t / 11000 * Math.PI * 2 * b.dir;
+      const r = base * (b.orbit + .035 * Math.sin(t / 2600 + b.phase));
+      const rise = (t - 27500) / 1000 * 5;
+      const x = cx + Math.cos(ang) * r * 1.25;
+      const y = cy + Math.sin(ang) * r * .68 - rise;
+      const a = b.alpha * visible;
+      if (a <= 0 || y < -60 || y > H + 60) continue;
+
+      const g = ctx.createRadialGradient(x - b.r * .3, y - b.r * .35, 1, x, y, b.r * 1.5);
+      g.addColorStop(0, `rgba(255,255,255,${.16 * a})`);
+      g.addColorStop(.65, `rgba(190,200,255,${.06 * a})`);
+      g.addColorStop(1, 'rgba(190,200,255,0)');
+      ctx.fillStyle = g;
+      ctx.beginPath(); ctx.arc(x, y, b.r * 1.5, 0, Math.PI * 2); ctx.fill();
+
+      ctx.strokeStyle = `rgba(232,240,255,${.26 * a})`;
+      ctx.lineWidth = 1;
+      ctx.beginPath(); ctx.arc(x, y, b.r * 1.25, 0, Math.PI * 2); ctx.stroke();
+
+      ctx.strokeStyle = `rgba(255,255,255,${.82 * a})`;
+      ctx.shadowColor = 'rgba(150,200,255,.9)';
+      ctx.shadowBlur = 12;
+      ctx.save();
+      ctx.translate(x, y);
+      drawIcon(b.kind, b.r * .5);
+      ctx.restore();
+      ctx.shadowBlur = 0;
+    }
+    ctx.restore();
+  }
+
+  function spawnBurst(x, y) {
+    const colors = ['255,232,200', '210,225,255', '255,200,230'];
+    for (let i = 0; i < 46; i++) {
+      const a = rand(0, Math.PI * 2), v = rand(40, 230);
+      bursts.push({
+        x, y, vx: Math.cos(a) * v, vy: Math.sin(a) * v,
+        life: 0, max: rand(.8, 1.6), r: rand(.8, 2.4),
+        c: colors[Math.floor(Math.random() * colors.length)]
+      });
+    }
+    if (bursts.length > 400) bursts.splice(0, bursts.length - 400);
+  }
+
+  function drawBursts(dt) {
+    if (!bursts.length) return;
+    ctx.save();
+    ctx.globalCompositeOperation = 'lighter';
+    bursts = bursts.filter(b => {
+      b.life += dt;
+      if (b.life > b.max) return false;
+      b.x += b.vx * dt; b.y += b.vy * dt;
+      b.vx *= .975; b.vy = b.vy * .975 + 16 * dt;
+      const a = 1 - b.life / b.max;
+      ctx.fillStyle = `rgba(${b.c},${a})`;
+      ctx.beginPath(); ctx.arc(b.x, b.y, b.r, 0, Math.PI * 2); ctx.fill();
+      return true;
+    });
+    ctx.restore();
+  }
+
+  // 分镜运镜：俯冲入云 → 横移 → 推近 → 拉远 → 回落
+  function camera(t) {
+    const keys = [
+      [0, 6000, 1.24, 1.0, 0, 0, .1, 0],
+      [6000, 22000, 1.0, 1.06, 0, -.025, 0, 0],
+      [22000, 32000, 1.06, 1.15, -.025, 0, 0, 0],
+      [32000, 40000, 1.15, 1.02, 0, 0, 0, 0],
+      [40000, 48000, 1.02, 1.09, 0, 0, 0, .04]
+    ];
+    let z = 1, dx = 0, dy = 0;
+    for (const [a, b, z1, z2, x1, x2, y1, y2] of keys) {
+      if (t >= a && t < b) {
+        const p = easeInOut(clamp((t - a) / (b - a)));
+        z = lerp(z1, z2, p);
+        dx = W * lerp(x1, x2, p);
+        dy = H * lerp(y1, y2, p);
+        break;
+      }
+      if (t >= b) { z = z2; dx = W * x2; dy = H * y2; }
+    }
+    if (reduceMotion) { z = 1; dx = 0; dy = 0; }
+    const shake = windowAt(t, 22000, 22600, 25000, 25800) * 2.2;
+    return { z, x: dx + rand(-shake, shake), y: dy + rand(-shake, shake) };
+  }
+
+  // ===== 程序化背景音乐（Web Audio，无外部音频文件）=====
+  const midi = n => 440 * Math.pow(2, (n - 69) / 12);
+  const chords = [
+    [50, 57, 60, 65], // Dm7
+    [46, 53, 57, 62], // Bbmaj7
+    [53, 60, 64, 69], // Fmaj7
+    [48, 55, 59, 64]  // Cmaj7
+  ];
+
+  function initAudio() {
+    if (audio) return audio;
+    const AC = window.AudioContext || window.webkitAudioContext;
+    if (!AC) return null;
+    const ac = new AC();
+
+    const master = ac.createGain();
+    master.gain.value = 0;
+    const comp = ac.createDynamicsCompressor();
+    comp.threshold.value = -18;
+    comp.knee.value = 22;
+    comp.ratio.value = 4;
+    comp.attack.value = .01;
+    comp.release.value = .3;
+    master.connect(comp);
+    comp.connect(ac.destination);
+
+    const conv = ac.createConvolver();
+    const len = Math.floor(ac.sampleRate * 2.6);
+    const impulse = ac.createBuffer(2, len, ac.sampleRate);
+    for (let ch = 0; ch < 2; ch++) {
+      const d = impulse.getChannelData(ch);
+      for (let i = 0; i < len; i++) {
+        d[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / len, 2.6);
+      }
+    }
+    conv.buffer = impulse;
+    const wet = ac.createGain();
+    wet.gain.value = .34;
+    conv.connect(wet);
+    wet.connect(master);
+
+    const padFilter = ac.createBiquadFilter();
+    padFilter.type = 'lowpass';
+    padFilter.frequency.value = 820;
+    const padGain = ac.createGain();
+    padGain.gain.value = .13;
+    padGain.connect(padFilter);
+    padFilter.connect(master);
+    padFilter.connect(conv);
+
+    const voices = [];
+    for (let i = 0; i < 4; i++) {
+      const o = ac.createOscillator();
+      o.type = i % 2 ? 'sine' : 'triangle';
+      o.frequency.value = midi(chords[0][i]);
+      const g = ac.createGain();
+      g.gain.value = .2;
+      o.connect(g); g.connect(padGain);
+      o.start();
+      voices.push({ o, g });
+    }
+    const lfo = ac.createOscillator();
+    lfo.frequency.value = .08;
+    const lfoGain = ac.createGain();
+    lfoGain.gain.value = .035;
+    lfo.connect(lfoGain); lfoGain.connect(padGain.gain);
+    lfo.start();
+
+    const noiseBuf = ac.createBuffer(1, ac.sampleRate * 3, ac.sampleRate);
+    const nd = noiseBuf.getChannelData(0);
+    for (let i = 0; i < nd.length; i++) nd[i] = Math.random() * 2 - 1;
+    const noise = ac.createBufferSource();
+    noise.buffer = noiseBuf; noise.loop = true;
+    const bp = ac.createBiquadFilter();
+    bp.type = 'bandpass'; bp.frequency.value = 680; bp.Q.value = .55;
+    const noiseGain = ac.createGain();
+    noiseGain.gain.value = 0;
+    noise.connect(bp); bp.connect(noiseGain);
+    noiseGain.connect(master); noiseGain.connect(conv);
+    noise.start();
+
+    audio = {
+      ac, master, conv, voices, noiseGain, padFilter, noiseBuf,
+      enabled: false, chordIndex: -1, chordNotes: chords[0], styleB: false,
+      markers: new Set(), arpTimer: null, nextNote: 0, step: 0
+    };
+    return audio;
+  }
+
+  function setChord(a, idx) {
+    a.chordIndex = idx;
+    a.chordNotes = chords[idx];
+    a.voices.forEach((v, i) => {
+      v.o.frequency.setTargetAtTime(midi(a.chordNotes[i]), a.ac.currentTime, .7);
+    });
+  }
+
+  function playNote(a, freq, when, level, decay, type, panValue) {
+    const o = a.ac.createOscillator();
+    o.type = type || 'sine';
+    o.frequency.value = freq;
+    const g = a.ac.createGain();
+    g.gain.setValueAtTime(0, when);
+    g.gain.linearRampToValueAtTime(level, when + .015);
+    g.gain.exponentialRampToValueAtTime(.0001, when + decay);
+    o.connect(g);
+    if (a.ac.createStereoPanner) {
+      const pan = a.ac.createStereoPanner();
+      pan.pan.value = panValue === undefined ? (a.step % 2 ? .32 : -.32) : panValue;
+      g.connect(pan); pan.connect(a.master); pan.connect(a.conv);
+    } else {
+      g.connect(a.master); g.connect(a.conv);
+    }
+    o.start(when);
+    o.stop(when + decay + .05);
+  }
+
+  function playChime(a, freq, when, bright) {
+    const o = a.ac.createOscillator();
+    o.type = 'sine'; o.frequency.value = freq;
+    const o2 = a.ac.createOscillator();
+    o2.type = 'triangle'; o2.frequency.value = bright ? freq * 1.5 : freq * 2.01;
+    const g = a.ac.createGain();
+    g.gain.setValueAtTime(0, when);
+    g.gain.linearRampToValueAtTime(bright ? .17 : .15, when + (bright ? .008 : .02));
+    g.gain.exponentialRampToValueAtTime(.0001, when + (bright ? 1.9 : 2.6));
+    const g2 = a.ac.createGain();
+    g2.gain.value = bright ? .3 : .22;
+    o.connect(g); o2.connect(g2); g2.connect(g);
+    g.connect(a.master); g.connect(a.conv);
+    o.start(when); o2.start(when);
+    o.stop(when + 2.7); o2.stop(when + 2.7);
+  }
+
+  // 第二段风格的轻沙锤
+  function playShaker(a, when) {
+    const src = a.ac.createBufferSource();
+    src.buffer = a.noiseBuf;
+    const hp = a.ac.createBiquadFilter();
+    hp.type = 'highpass'; hp.frequency.value = 4200;
+    const g = a.ac.createGain();
+    g.gain.setValueAtTime(0, when);
+    g.gain.linearRampToValueAtTime(.028, when + .006);
+    g.gain.exponentialRampToValueAtTime(.0001, when + .09);
+    src.connect(hp); hp.connect(g); g.connect(a.master);
+    src.start(when);
+    src.stop(when + .12);
+  }
+
+  // 24 秒「穿门」处：空灵 → 明亮，参数渐变
+  function switchStyle(a, bright) {
+    a.styleB = bright;
+    const now = a.ac.currentTime;
+    a.padFilter.frequency.setTargetAtTime(bright ? 1650 : 820, now, .9);
+    if (a.voices) {
+      a.voices.forEach((v, i) => {
+        v.g.gain.setTargetAtTime(bright ? .23 : .2, now, .9);
+      });
+    }
+  }
+
+  function startArp(a) {
+    if (a.arpTimer) return;
+    a.nextNote = a.ac.currentTime + .12;
+    a.step = 0;
+    a.arpTimer = setInterval(() => {
+      if (!a.enabled) return;
+      const bright = a.styleB;
+      const pattern = bright ? [0, 2, 1, 3, 0, 2, 3, 1] : [0, 1, 2, 3, 2, 1, 0, 2];
+      const interval = bright ? .34 : .46;
+      const notes = a.chordNotes || chords[0];
+      while (a.nextNote < a.ac.currentTime + .35) {
+        const idx = pattern[a.step % pattern.length];
+        playNote(
+          a, midi(notes[idx] + 12), a.nextNote,
+          bright ? .072 : .05, bright ? .85 : 1.3,
+          bright ? 'triangle' : 'sine',
+          bright ? (a.step % 4 < 2 ? -.28 : .28) : (a.step % 2 ? .32 : -.32)
+        );
+        if (bright) {
+          if (a.step % 2 === 0) {
+            playNote(a, midi(notes[0] - 12), a.nextNote, .055, .55, 'sine', 0);
+          } else {
+            playShaker(a, a.nextNote + interval * .5);
+          }
         }
-        
-        // 烟花发射类
-        class Firework {
-            constructor(x, y, targetX, targetY, isSpecial = false) {
-                this.x = x;
-                this.y = y;
-                this.targetX = targetX;
-                this.targetY = targetY;
-                this.color = isSpecial ? "#FF6B93" : fireworkColors[Math.floor(Math.random() * fireworkColors.length)];
-                this.speedX = (targetX - x) / 50;
-                this.speedY = (targetY - y) / 50;
-                this.particles = [];
-                this.exploded = false;
-                this.radius = 3;
-                this.isSpecial = isSpecial;
-                this.trail = [];
-                this.maxTrailLength = 5;
-            }
-            
-            update() {
-                if (!this.exploded) {
-                    this.x += this.speedX;
-                    this.y += this.speedY;
-                    
-                    // 添加尾迹效果
-                    this.trail.push({x: this.x, y: this.y});
-                    if (this.trail.length > this.maxTrailLength) {
-                        this.trail.shift();
-                    }
-                    
-                    // 添加尾迹粒子
-                    this.particles.push(new Particle(this.x, this.y, this.color));
-                    
-                    // 到达目标位置时爆炸
-                    if (Math.abs(this.x - this.targetX) < 5 && Math.abs(this.y - this.targetY) < 5) {
-                        this.explode();
-                    }
-                }
-                
-                // 更新所有粒子
-                for (let i = this.particles.length - 1; i >= 0; i--) {
-                    this.particles[i].update();
-                    if (!this.particles[i].isAlive()) {
-                        this.particles.splice(i, 1);
-                    }
-                }
-            }
-            
-            explode() {
-                this.exploded = true;
-                const particleCount = this.isSpecial ? 100 : Math.floor(Math.random() * 60) + 60;
-                
-                for (let i = 0; i < particleCount; i++) {
-                    this.particles.push(new Particle(this.x, this.y, this.color));
-                }
-                
-                // 如果是特殊烟花，添加心形爆炸
-                if (this.isSpecial) {
-                    this.createHeartShape();
-                } else {
-                    // 随机添加一些不同颜色的粒子
-                    const extraColorCount = Math.floor(Math.random() * 3) + 1;
-                    for (let i = 0; i < extraColorCount; i++) {
-                        const extraColor = fireworkColors[Math.floor(Math.random() * fireworkColors.length)];
-                        const extraParticleCount = Math.floor(Math.random() * 25) + 15;
-                        
-                        for (let j = 0; j < extraParticleCount; j++) {
-                            this.particles.push(new Particle(this.x, this.y, extraColor));
-                        }
-                    }
-                }
-            }
-            
-            createHeartShape() {
-                const heartColor = "#FF6B93";
-                const heartParticles = 50;
-                
-                for (let i = 0; i < heartParticles; i++) {
-                    const angle = (i / heartParticles) * Math.PI * 2;
-                    const t = angle;
-                    const x = 16 * Math.pow(Math.sin(t), 3);
-                    const y = -(13 * Math.cos(t) - 5 * Math.cos(2*t) - 2 * Math.cos(3*t) - Math.cos(4*t));
-                    
-                    const particle = new Particle(this.x + x * 3, this.y + y * 3, heartColor);
-                    particle.speedX = x * 0.3;
-                    particle.speedY = y * 0.3;
-                    this.particles.push(particle);
-                }
-            }
-            
-            draw() {
-                // 绘制尾迹
-                for (let i = 0; i < this.trail.length; i++) {
-                    const point = this.trail[i];
-                    ctx.beginPath();
-                    ctx.arc(point.x, point.y, this.radius * (i/this.trail.length), 0, Math.PI * 2);
-                    ctx.fillStyle = this.color;
-                    ctx.globalAlpha = i/this.trail.length * 0.7;
-                    ctx.fill();
-                }
-                ctx.globalAlpha = 1;
-                
-                // 绘制所有粒子
-                for (const particle of this.particles) {
-                    particle.draw();
-                }
-                
-                // 绘制烟花主体
-                if (!this.exploded) {
-                    ctx.beginPath();
-                    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-                    ctx.fillStyle = this.color;
-                    ctx.fill();
-                    
-                    // 如果是特殊烟花，添加光晕效果
-                    if (this.isSpecial) {
-                        ctx.beginPath();
-                        ctx.arc(this.x, this.y, this.radius + 5, 0, Math.PI * 2);
-                        ctx.fillStyle = this.color;
-                        ctx.globalAlpha = 0.3;
-                        ctx.fill();
-                        ctx.globalAlpha = 1;
-                    }
-                }
-            }
-            
-            isDone() {
-                return this.exploded && this.particles.length === 0;
-            }
+        a.nextNote += interval;
+        a.step++;
+      }
+    }, 90);
+  }
+
+  function enableMusic() {
+    const a = initAudio();
+    if (!a) return;
+    a.ac.resume();
+    a.enabled = true;
+    a.master.gain.setTargetAtTime(.55, a.ac.currentTime, .12);
+    startArp(a);
+    musicBtn.textContent = '音乐：开';
+    musicBtn.classList.add('on');
+    musicBtn.setAttribute('aria-pressed', 'true');
+  }
+
+  function disableMusic() {
+    if (!audio) return;
+    audio.enabled = false;
+    audio.master.gain.setTargetAtTime(0, audio.ac.currentTime, .1);
+    if (audio.arpTimer) { clearInterval(audio.arpTimer); audio.arpTimer = null; }
+    musicBtn.textContent = '音乐：关';
+    musicBtn.classList.remove('on');
+    musicBtn.setAttribute('aria-pressed', 'false');
+  }
+
+  let last = performance.now();
+  function frame(now) {
+    const dt = Math.min((now - last) / 1000, .05);
+    last = now;
+    let t = now - start;
+    let wrapped = false;
+    if (t >= LOOP) { start = now; t = 0; wrapped = true; }
+
+    if (audio && audio.enabled) {
+      const a = audio;
+      const idx = Math.floor(t / 12000) % 4;
+      if (idx !== a.chordIndex) setChord(a, idx);
+      const bright = t >= 24000;
+      if (bright !== a.styleB) switchStyle(a, bright);
+      if (wrapped) a.markers.clear();
+      for (const m of musicMarkers) {
+        if (!a.markers.has(m.t) && t >= m.t) {
+          a.markers.add(m.t);
+          playChime(a, m.f, a.ac.currentTime + .02, m.t >= 24000);
         }
-        
-        // 烟花管理器
-        class FireworksManager {
-            constructor() {
-                this.fireworks = [];
-                this.isPaused = false;
-                this.autoLaunchInterval = null;
-                this.startAutoLaunch();
-            }
-            
-            startAutoLaunch() {
-                this.autoLaunchInterval = setInterval(() => {
-                    if (!this.isPaused && this.fireworks.length < 8) {
-                        this.launchRandomFirework();
-                    }
-                }, 1000);
-            }
-            
-            launchRandomFirework() {
-                const startX = Math.random() * canvas.width;
-                const startY = canvas.height;
-                const targetX = Math.random() * canvas.width;
-                const targetY = Math.random() * (canvas.height * 0.6) + 50;
-                
-                this.fireworks.push(new Firework(startX, startY, targetX, targetY));
-            }
-            
-            launchMengyunFirework() {
-                const startX = canvas.width / 2;
-                const startY = canvas.height;
-                const targetX = canvas.width / 2;
-                const targetY = canvas.height * 0.4;
-                
-                const specialFirework = new Firework(startX, startY, targetX, targetY, true);
-                this.fireworks.push(specialFirework);
-                
-                // 同时发射几个普通烟花
-                setTimeout(() => {
-                    for (let i = 0; i < 3; i++) {
-                        setTimeout(() => {
-                            this.launchRandomFirework();
-                        }, i * 200);
-                    }
-                }, 500);
-            }
-            
-            launchMultipleFireworks(count) {
-                for (let i = 0; i < count; i++) {
-                    setTimeout(() => {
-                        this.launchRandomFirework();
-                    }, i * 150);
-                }
-            }
-            
-            togglePause() {
-                this.isPaused = !this.isPaused;
-                pauseFireworksBtn.innerHTML = this.isPaused ? 
-                    '<i class="fas fa-play"></i> 继续烟花' : 
-                    '<i class="fas fa-pause"></i> 暂停烟花';
-            }
-            
-            update() {
-                if (this.isPaused) return;
-                
-                // 清除画布，使用半透明黑色创造拖尾效果
-                ctx.fillStyle = 'rgba(26, 26, 46, 0.1)';
-                ctx.fillRect(0, 0, canvas.width, canvas.height);
-                
-                // 更新并绘制所有烟花
-                for (let i = this.fireworks.length - 1; i >= 0; i--) {
-                    this.fireworks[i].update();
-                    this.fireworks[i].draw();
-                    
-                    if (this.fireworks[i].isDone()) {
-                        this.fireworks.splice(i, 1);
-                    }
-                }
-            }
-        }
-        
-        // 初始化烟花管理器
-        const fireworksManager = new FireworksManager();
-        
-        // 动画循环
-        function animate() {
-            fireworksManager.update();
-            requestAnimationFrame(animate);
-        }
-        
-        // 开始动画
-        animate();
-        
-        // 祝福语相关功能
-        function getRandomWish() {
-            const randomIndex = Math.floor(Math.random() * mengyunWishes.length);
-            return mengyunWishes[randomIndex];
-        }
-        
-        function getRandomPersonalizedWish() {
-            const randomIndex = Math.floor(Math.random() * personalizedWishes.length);
-            return personalizedWishes[randomIndex];
-        }
-        
-        // 显示消息函数
-        function showMessage(message, duration = 2000) {
-            // 创建一个临时消息框
-            const messageBox = document.createElement('div');
-            messageBox.textContent = message;
-            messageBox.style.cssText = `
-                position: fixed;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                background: rgba(255, 107, 147, 0.9);
-                color: white;
-                padding: 20px 30px;
-                border-radius: 20px;
-                font-size: 1.3rem;
-                z-index: 1000;
-                box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-                border: 3px solid white;
-                animation: fadeInOut 2s forwards;
-                text-align: center;
-                max-width: 80%;
-            `;
-            
-            document.body.appendChild(messageBox);
-            
-            // 动画结束后移除消息框
-            setTimeout(() => {
-                if (messageBox.parentNode) {
-                    document.body.removeChild(messageBox);
-                }
-            }, duration);
-        }
-        
-        // 添加CSS动画
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes fadeInOut {
-                0% { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
-                20% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
-                80% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
-                100% { opacity: 0; transform: translate(-50%, -50%) scale(0.9); }
-            }
-            
-            @keyframes floatUp {
-                0% { transform: translateY(0) scale(1); opacity: 1; }
-                100% { transform: translateY(-100px) scale(0.5); opacity: 0; }
-            }
-        `;
-        document.head.appendChild(style);
-        
-        // 初始化祝福语
-        wishTextElement.textContent = getRandomWish();
-        personalizedWishElement.textContent = getRandomPersonalizedWish();
-        
-        // 事件监听
-        newWishBtn.addEventListener('click', () => {
-            wishTextElement.textContent = getRandomWish();
-            personalizedWishElement.textContent = getRandomPersonalizedWish();
-            
-            // 每次点击祝福语也发射一些烟花庆祝
-            fireworksManager.launchMultipleFireworks(3);
-            
-            // 添加按钮动画
-            newWishBtn.style.transform = 'scale(0.95)';
-            setTimeout(() => {
-                newWishBtn.style.transform = '';
-            }, 150);
-        });
-        
-        moreFireworksBtn.addEventListener('click', () => {
-            fireworksManager.launchMultipleFireworks(6);
-        });
-        
-        mengyunFireworksBtn.addEventListener('click', () => {
-            fireworksManager.launchMengyunFirework();
-            showMessage("徐梦云专属烟花绽放！", 1500);
-        });
-        
-        pauseFireworksBtn.addEventListener('click', () => {
-            fireworksManager.togglePause();
-        });
-        
-        specialEffectBtn.addEventListener('click', () => {
-            // 特效祝福：同时更换祝福语和发射大量烟花
-            wishTextElement.textContent = getRandomWish();
-            personalizedWishElement.textContent = getRandomPersonalizedWish();
-            
-            // 发射大量烟花
-            fireworksManager.launchMultipleFireworks(8);
-            
-            // 显示特效消息
-            showMessage("✨ 2026年，徐梦云专属祝福 ✨", 2000);
-            
-            // 添加一些视觉特效
-            document.body.style.animation = "none";
-            setTimeout(() => {
-                document.body.style.animation = "pulseEffect 0.5s";
-            }, 10);
-            
-            // 添加脉冲效果CSS
-            if (!document.querySelector('#pulse-effect')) {
-                const pulseStyle = document.createElement('style');
-                pulseStyle.id = 'pulse-effect';
-                pulseStyle.textContent = `
-                    @keyframes pulseEffect {
-                        0% { filter: brightness(1); }
-                        50% { filter: brightness(1.3); }
-                        100% { filter: brightness(1); }
-                    }
-                `;
-                document.head.appendChild(pulseStyle);
-            }
-        });
-        
-        // 徐梦云徽章点击事件
-        mengyunBadge.addEventListener('click', () => {
-            showMessage("徐梦云，2026年元旦快乐！愿新的一年更加美好！", 2500);
-            fireworksManager.launchMengyunFirework();
-            
-            // 徽章动画
-            mengyunBadge.style.transform = 'scale(1.2) rotate(360deg)';
-            mengyunBadge.style.background = 'rgba(255, 107, 147, 0.4)';
-            setTimeout(() => {
-                mengyunBadge.style.transform = '';
-                mengyunBadge.style.background = '';
-            }, 500);
-        });
-        
-        // 点击页面任意位置也可以发射烟花
-        canvas.addEventListener('click', (e) => {
-            if (fireworksManager.isPaused) return;
-            
-            const startX = Math.random() * canvas.width;
-            const startY = canvas.height;
-            const targetX = e.clientX;
-            const targetY = e.clientY;
-            
-            fireworksManager.fireworks.push(new Firework(startX, startY, targetX, targetY, Math.random() > 0.7));
-        });
-        
-        // 页面加载时自动发射一些烟花
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                fireworksManager.launchMultipleFireworks(4);
-                showMessage("欢迎来到徐梦云2026元旦祝福页面！", 2000);
-            }, 800);
-        });
-        
-        // 添加键盘快捷键
-        document.addEventListener('keydown', (e) => {
-            switch(e.key) {
-                case ' ':
-                    // 空格键切换祝福
-                    newWishBtn.click();
-                    break;
-                case 'f':
-                case 'F':
-                    // F键发射更多烟花
-                    moreFireworksBtn.click();
-                    break;
-                case 'm':
-                case 'M':
-                    // M键发射梦云专属烟花
-                    mengyunFireworksBtn.click();
-                    break;
-                case 'p':
-                case 'P':
-                    // P键暂停/继续烟花
-                    pauseFireworksBtn.click();
-                    break;
-                case 'Enter':
-                    // Enter键触发特效
-                    specialEffectBtn.click();
-                    break;
-            }
-        });
-    </script>
+      }
+      const swell = Math.max(
+        windowAt(t, 6000, 9000, 14500, 17500),
+        windowAt(t, 25500, 28500, 36500, 40000)
+      );
+      a.noiseGain.gain.setTargetAtTime((bright ? .012 : .02) * swell, a.ac.currentTime, .25);
+    }
+
+    pmouse.x += (mouse.x - pmouse.x) * .05;
+    pmouse.y += (mouse.y - pmouse.y) * .05;
+    const cam = camera(t);
+
+    ctx.save();
+    ctx.translate(W / 2 + cam.x, H / 2 + cam.y);
+    ctx.scale(cam.z, cam.z);
+    ctx.translate(-W / 2, -H / 2);
+
+    drawBackground(t);
+    drawStars(t);
+    drawClouds(t, dt, 'far');
+    drawMeteor(t, 0);
+    drawMeteor(t, 5100);
+    drawGodRays(t);
+    drawLensFlare(t);
+    drawLightPath(t);
+    drawPortal(t);
+    drawBoat(t);
+    drawBubbles(t);
+    drawParticles(t);
+    drawRiver(t);
+    drawClouds(t, dt, 'near');
+    drawBursts(dt);
+
+    ctx.restore();
+
+    drawChapter(t);
+
+    // 胶片颗粒（屏幕空间）
+    if (grainPattern) {
+      ctx.save();
+      ctx.globalAlpha = .13;
+      ctx.globalCompositeOperation = 'overlay';
+      ctx.fillStyle = grainPattern;
+      ctx.fillRect(0, 0, W, H);
+      ctx.restore();
+    }
+    requestAnimationFrame(frame);
+  }
+
+  window.addEventListener('resize', resize);
+  window.addEventListener('pointermove', e => {
+    mouse.x = (e.clientX / W - .5) * 2;
+    mouse.y = (e.clientY / H - .5) * 2;
+  });
+
+  function firstGesture(e) {
+    if (gestureDone) return;
+    if (e.target && e.target.closest && e.target.closest('button')) return;
+    gestureDone = true;
+    if (!userDisabledMusic) enableMusic();
+  }
+  window.addEventListener('pointerdown', firstGesture);
+  window.addEventListener('keydown', firstGesture);
+
+  canvas.addEventListener('pointerdown', e => spawnBurst(e.clientX, e.clientY));
+  document.querySelectorAll('button').forEach(b => {
+    b.addEventListener('pointerdown', e => e.stopPropagation());
+  });
+  musicBtn.addEventListener('click', () => {
+    gestureDone = true;
+    const a = initAudio();
+    if (!a) return;
+    if (a.enabled) { userDisabledMusic = true; disableMusic(); }
+    else { userDisabledMusic = false; enableMusic(); }
+  });
+
+  document.getElementById('replay').addEventListener('click', () => {
+    start = performance.now();
+    bursts = [];
+    if (audio) { audio.markers.clear(); audio.chordIndex = -1; }
+    document.querySelectorAll('.kicker,.title,.sub,.tip').forEach(el => {
+      el.style.animation = 'none';
+      void el.offsetWidth;
+      el.style.animation = '';
+    });
+  });
+
+  document.getElementById('fullscreen').addEventListener('click', () => {
+    if (document.fullscreenElement) document.exitFullscreen();
+    else document.documentElement.requestFullscreen && document.documentElement.requestFullscreen();
+  });
+
+  // 若浏览器允许无交互播放则直接开启，否则等待首次点击
+  const autoAudio = initAudio();
+  if (autoAudio && autoAudio.ac.state === 'running' && !userDisabledMusic) {
+    gestureDone = true;
+    enableMusic();
+  }
+
+  resize();
+  requestAnimationFrame(frame);
+})();
+</script>
 </body>
 </html>
